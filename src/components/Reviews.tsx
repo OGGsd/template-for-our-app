@@ -4,44 +4,44 @@ import { Star, Quote, ExternalLink } from 'lucide-react';
 const Reviews = () => {
   const reviews = [
     {
-      name: "Marcus Johansson",
+      name: "Anna Lindberg",
       rating: 5,
-      text: "Fantastisk service på KLIPPCENTER! Personalen är verkligen professionell och lyssnar på vad man vill ha. Har gått hit i över ett år och har aldrig blivit besviken. Rekommenderar starkt!",
-      service: "Herrklippning",
+      text: "Fantastisk service på KLIPPCENTER! Lotta är verkligen professionell och lyssnar på vad man vill ha. Har gått hit i över två år och har aldrig blivit besviken. Rekommenderar starkt!",
+      service: "Damklippning",
       date: "1 vecka sedan"
     },
     {
-      name: "Anna Lindberg",
+      name: "Maria Johansson",
       rating: 5,
-      text: "Bästa frisörsalongen i Jönköping! De förstod exakt vad jag ville ha och resultatet blev bättre än jag hade förväntat mig. Kommer definitivt tillbaka!",
-      service: "Damklippning",
+      text: "Bästa frisörsalongen i Jönköping! Caroline förstod exakt vad jag ville ha med min färgning och resultatet blev bättre än jag hade förväntat mig. Kommer definitivt tillbaka!",
+      service: "Färgning & Slingor",
       date: "2 veckor sedan"
     },
     {
-      name: "Erik Nilsson",
+      name: "Sofia Andersson",
       rating: 5,
-      text: "Professionell service från början till slut. Bokningssystemet är smidigt och kvaliteten på klippningen är alltid toppklass. Perfekt läge på Barnarpsgatan!",
-      service: "Herrklippning",
+      text: "Emelie är grym på blonda hår! Hon fick mitt hår att se så naturligt och vackert ut. Professionell service från början till slut. Perfekt läge på Barnarpsgatan!",
+      service: "Blond färgning",
       date: "1 månad sedan"
-    },
-    {
-      name: "Lisa Andersson",
-      rating: 5,
-      text: "Tog med min son för barnklippning och personalen var så tålmodig och snäll. Han var inte rädd alls och resultatet blev perfekt! Tack KLIPPCENTER!",
-      service: "Barnklippning",
-      date: "3 veckor sedan"
-    },
-    {
-      name: "David Karlsson",
-      rating: 5,
-      text: "Centralt beläget och fantastisk service. Personalen är kunnig och salongen har en så professionell atmosfär. Rekommenderar starkt!",
-      service: "Herrklippning",
-      date: "2 månader sedan"
     },
     {
       name: "Emma Petersson",
       rating: 5,
-      text: "Så nöjd med min nya frisyr! Personalen är kunnig och salongen har en så mysig atmosfär. Rekommenderar starkt alla i Jönköping!",
+      text: "Tog med min dotter för barnklippning och personalen var så tålmodig och snäll. Hon var inte rädd alls och resultatet blev perfekt! Tack KLIPPCENTER!",
+      service: "Barnklippning",
+      date: "3 veckor sedan"
+    },
+    {
+      name: "Linda Karlsson",
+      rating: 5,
+      text: "Annelie är fantastisk! Hon håller sig alltid uppdaterad med nya tekniker och produkter. Centralt beläget och fantastisk service. Rekommenderar starkt!",
+      service: "Klippning & Styling",
+      date: "2 månader sedan"
+    },
+    {
+      name: "Camilla Nilsson",
+      rating: 5,
+      text: "Så nöjd med min nya frisyr! Personalen är kunnig och salongen har en så mysig atmosfär. Helhetskoncept med kläder och accessoarer är ett plus. Rekommenderar alla i Jönköping!",
       service: "Damklippning",
       date: "1 månad sedan"
     }
@@ -82,16 +82,16 @@ const Reviews = () => {
         {/* Overall Rating */}
         <div className="bg-soft-green rounded-2xl p-6 md:p-8 mb-8 md:mb-12 max-w-2xl mx-auto text-center shadow-lg border border-soft-green">
           <div className="flex flex-col md:flex-row items-center justify-center mb-4">
-            <span className="text-4xl md:text-6xl font-bold text-dark mb-2 md:mb-0 md:mr-4">4.8</span>
+            <span className="text-4xl md:text-6xl font-bold text-dark mb-2 md:mb-0 md:mr-4">4.9</span>
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start mb-2">
                 {renderStars(5)}
               </div>
-              <p className="text-tertiary text-sm md:text-base">Baserat på 200+ recensioner</p>
+              <p className="text-tertiary text-sm md:text-base">Baserat på 150+ recensioner</p>
             </div>
           </div>
           <p className="text-base md:text-lg text-tertiary mb-6">
-            Över 95% av våra kunder rekommenderar oss till vänner och familj
+            Över 98% av våra kunder rekommenderar oss till vänner och familj
           </p>
           
           {/* Review Platform Buttons */}
@@ -149,7 +149,7 @@ const Reviews = () => {
               Upplev skillnaden med professionell service och exceptionell kvalitet
             </p>
             <button 
-              onClick={() => document.getElementById('tjanster')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('behandlingar')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-primary hover:bg-secondary text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105"
             >
               Boka Din Tid Nu

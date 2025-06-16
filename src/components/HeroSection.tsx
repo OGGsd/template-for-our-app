@@ -32,7 +32,7 @@ const HeroSection = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/ag/Hero%20Section%20Background-hSz2hWqBvlnxm5oFZQpw8yxKgRz4LW.jpg"
             alt="KLIPPCENTER | JKPG - Professionell frisörsalong i Jönköping"
             className="w-full h-full object-cover"
           />
@@ -75,7 +75,7 @@ const HeroSection = () => {
                 Kontakt
               </button>
               <button 
-                onClick={() => scrollToSection('tjanster')}
+                onClick={() => scrollToSection('behandlingar')}
                 className="bg-primary hover:bg-secondary text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
               >
                 Boka Tid
@@ -128,7 +128,7 @@ const HeroSection = () => {
                 
                 <div className="grid grid-cols-2 gap-4">
                   <button 
-                    onClick={() => scrollToSection('tjanster')}
+                    onClick={() => scrollToSection('behandlingar')}
                     className="flex flex-col items-center bg-primary hover:bg-secondary text-white p-4 rounded-lg font-semibold transition-colors duration-300"
                   >
                     <Calendar className="w-6 h-6 mb-2" />
@@ -194,7 +194,7 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
             <button 
-              onClick={() => scrollToSection('tjanster')}
+              onClick={() => scrollToSection('behandlingar')}
               className="bg-primary hover:bg-secondary text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-semibold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 shadow-xl w-full sm:w-auto"
             >
               Boka Tid Nu
@@ -236,7 +236,7 @@ const HeroSection = () => {
           </button>
           
           <button 
-            onClick={() => scrollToSection('tjanster')}
+            onClick={() => scrollToSection('behandlingar')}
             className="flex flex-col items-center justify-center bg-primary text-white hover:bg-secondary transition-colors duration-300 relative"
           >
             <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
