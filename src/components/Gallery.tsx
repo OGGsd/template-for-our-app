@@ -68,24 +68,24 @@ const Gallery = () => {
   };
 
   return (
-    <section id="galleri" className="py-16 md:py-20 bg-light-green pb-20 lg:pb-16">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center mb-12 md:mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-4 md:mb-6">
+    <section id="galleri" className="py-12 md:py-16 lg:py-20 bg-light-green pb-16 md:pb-20 lg:pb-16">
+      <div className="container mx-auto px-3 md:px-4 max-w-7xl">
+        <div className="text-center mb-8 md:mb-12 lg:mb-16">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-dark mb-3 md:mb-4 lg:mb-6">
             Vårt Arbete
           </h1>
-          <p className="text-lg md:text-xl text-tertiary max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-sm md:text-base lg:text-lg xl:text-xl text-tertiary max-w-3xl mx-auto leading-relaxed px-2 md:px-4">
             Se exempel på vårt professionella hantverk. Varje klippning är unikt anpassad 
             efter kundens önskemål och ansiktsform. Från klassiska stilar till moderna trends.
           </p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className="relative group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-square border border-soft-green"
+              className="relative group cursor-pointer overflow-hidden rounded-lg md:rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-square border border-soft-green"
               onClick={() => openModal(index)}
             >
               <img
@@ -95,8 +95,8 @@ const Gallery = () => {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 text-white">
-                  <p className="font-semibold text-sm md:text-base">{image.alt}</p>
+                <div className="absolute bottom-2 md:bottom-3 lg:bottom-4 left-2 md:left-3 lg:left-4 text-white">
+                  <p className="font-semibold text-xs md:text-sm lg:text-base">KLIPPCENTER | JKPG</p>
                 </div>
               </div>
             </div>
@@ -105,30 +105,30 @@ const Gallery = () => {
 
         {/* Modal - Optimized for 80% size */}
         {selectedImage !== null && (
-          <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
-            <div className="relative w-[80%] h-[80%] max-w-4xl max-h-4xl">
+          <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-2 md:p-4">
+            <div className="relative w-[95%] h-[95%] md:w-[80%] md:h-[80%] max-w-4xl max-h-4xl">
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 text-white hover:text-gray-300 z-10 bg-black/50 rounded-full p-2"
+                className="absolute top-2 md:top-4 right-2 md:right-4 text-white hover:text-gray-300 z-10 bg-black/50 rounded-full p-2"
                 aria-label="Stäng galleri"
               >
-                <X className="w-6 h-6 md:w-8 md:h-8" />
+                <X className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8" />
               </button>
               
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10 bg-black/50 rounded-full p-2"
+                className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10 bg-black/50 rounded-full p-2"
                 aria-label="Föregående bild"
               >
-                <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8" />
               </button>
               
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10 bg-black/50 rounded-full p-2"
+                className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10 bg-black/50 rounded-full p-2"
                 aria-label="Nästa bild"
               >
-                <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+                <ChevronRight className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8" />
               </button>
               
               <img
@@ -137,8 +137,8 @@ const Gallery = () => {
                 className="w-full h-full object-contain rounded-lg"
               />
               
-              <div className="absolute bottom-4 left-4 text-white bg-black/50 rounded-lg p-3">
-                <p className="font-semibold text-sm md:text-lg">{galleryImages[selectedImage].alt}</p>
+              <div className="absolute bottom-2 md:bottom-4 left-2 md:left-4 text-white bg-black/50 rounded-lg p-2 md:p-3">
+                <p className="font-semibold text-xs md:text-sm lg:text-lg">KLIPPCENTER | JKPG</p>
                 <p className="text-xs md:text-sm text-gray-200 mt-1">
                   {selectedImage + 1} av {galleryImages.length}
                 </p>
@@ -148,15 +148,15 @@ const Gallery = () => {
         )}
 
         {/* Call to Action */}
-        <div className="mt-12 md:mt-16 text-center">
-          <div className="bg-dark rounded-2xl p-6 md:p-8 text-white max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Vill Du Ha En Liknande Frisyr?</h3>
-            <p className="text-lg md:text-xl text-gray-300 mb-6">
+        <div className="mt-8 md:mt-12 lg:mt-16 text-center">
+          <div className="bg-dark rounded-xl md:rounded-2xl p-6 md:p-8 text-white max-w-4xl mx-auto">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">Vill Du Ha En Liknande Frisyr?</h3>
+            <p className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-300 mb-4 md:mb-6">
               Visa oss din favoritbild från galleriet när du bokar din tid, så hjälper vi dig att skapa din drömfrisyr
             </p>
             <button 
-              onClick={() => document.getElementById('tjanster')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-primary hover:bg-secondary text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105"
+              onClick={() => document.getElementById('behandlingar')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-primary hover:bg-secondary text-white px-4 md:px-6 lg:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-base lg:text-lg transition-all duration-300 transform hover:scale-105"
             >
               Boka Din Tid Nu
             </button>
