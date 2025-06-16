@@ -6,28 +6,44 @@ const Gallery = () => {
 
   const galleryImages = [
     {
-      src: "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "KLIPPCENTER | JKPG interiör - professionell frisörsalong"
+      src: "https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/467557892_1109769721157662_1599765407150624323_n-yozQket8AfqAoLwNGGaA111ii9AjwJ.jpg",
+      alt: "Professionell damklippning - KLIPPCENTER | JKPG expertarbete"
     },
     {
-      src: "https://images.pexels.com/photos/3998365/pexels-photo-3998365.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Professionell herrklippning - KLIPPCENTER | JKPG"
+      src: "https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/467693322_1109769724490995_6501380672227294028_n-vgXAzdAKodC0wn0agNewH4rLisw669.jpg",
+      alt: "Modern styling och klippning - professionell frisörtjänst"
     },
     {
-      src: "https://images.pexels.com/photos/3992656/pexels-photo-3992656.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Modern damklippning och styling - expertarbete"
+      src: "https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/470049398_1127609459373688_4444315445942757206_n-8bWahkpMkpnZ3Ar1CgeUFDOR4oVBNH.jpg",
+      alt: "Elegant uppsättning och styling - KLIPPCENTER | JKPG"
     },
     {
-      src: "https://images.pexels.com/photos/3992739/pexels-photo-3992739.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Professionell frisörtjänster - modern stil"
+      src: "https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/487477104_1219691720165461_1040846155795453199_n-ek9jFR0hmgLy4Sb75yCUpiXiHURXLz.jpg",
+      alt: "Professionell färgning och klippning - expertresultat"
     },
     {
-      src: "https://images.pexels.com/photos/3992663/pexels-photo-3992663.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Klassisk herrklippning med professionell service"
+      src: "https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/487820992_1218722283595738_2381392643848690262_n-4GQgY2URDu400Hp6VBD4WblUJh5lhf.jpg",
+      alt: "Modern damfrisyr - KLIPPCENTER | JKPG professionella tjänster"
     },
     {
-      src: "https://images.pexels.com/photos/3992741/pexels-photo-3992741.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Precision klippning och styling - KLIPPCENTER | JKPG expertis"
+      src: "https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/487877965_1219691943498772_779446924058318466_n-7lDEcOis785ismiper5lvPOwmaT8wk.jpg",
+      alt: "Klassisk klippning och styling - professionell kvalitet"
+    },
+    {
+      src: "https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/488074617_1218721910262442_6788717672047599204_n-ePS3yXg5p42xe0qpUlJ0bUqXkD2Buo.jpg",
+      alt: "Elegant frisyr och professionell styling"
+    },
+    {
+      src: "https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/488162243_1219223146878985_1494249517233060685_n-N09GovvVGEOL3gqcGj60Hm3szszOai.jpg",
+      alt: "Modern klippning - KLIPPCENTER | JKPG expertis"
+    },
+    {
+      src: "https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/488505260_1219223180212315_4515604660057616653_n-1VNqlv3F3hFM3BXWMJ1SPrTuiKT2ly.jpg",
+      alt: "Professionell damklippning och färgning"
+    },
+    {
+      src: "https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/489433521_1224223603045606_2025676566452142179_n-qrKNPsqTLudRpQYlgqig7f1Rz6CnW5.jpg",
+      alt: "Elegant styling och professionell frisörtjänst - KLIPPCENTER | JKPG"
     }
   ];
 
@@ -130,6 +146,22 @@ const Gallery = () => {
             </div>
           </div>
         )}
+
+        {/* Call to Action */}
+        <div className="mt-12 md:mt-16 text-center">
+          <div className="bg-dark rounded-2xl p-6 md:p-8 text-white max-w-4xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Vill Du Ha En Liknande Frisyr?</h3>
+            <p className="text-lg md:text-xl text-gray-300 mb-6">
+              Visa oss din favoritbild från galleriet när du bokar din tid, så hjälper vi dig att skapa din drömfrisyr
+            </p>
+            <button 
+              onClick={() => document.getElementById('tjanster')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-primary hover:bg-secondary text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Boka Din Tid Nu
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );
