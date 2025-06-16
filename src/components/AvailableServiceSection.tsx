@@ -1,178 +1,35 @@
-import React, { useState } from 'react';
-import { X, Clock, CreditCard, ChevronRight } from 'lucide-react';
-
-interface Service {
-  name: string;
-  duration: string;
-  price: string;
-  url: string;
-}
-
-interface ServiceCategory {
-  category: string;
-  services: Service[];
-}
+import React, { useState, useEffect } from 'react';
+import { Calendar, Clock, X, ExternalLink } from 'lucide-react';
 
 const AvailableServiceSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [selectedService, setSelectedService] = useState<string | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const services: ServiceCategory[] = [
-    {
-      category: "Barnklippning (0–12 år)",
-      services: [
-        {
-          name: "Flickor",
-          duration: "30 min",
-          price: "400 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/barnklippning-0-12-ar-flickor-1486880"
-        },
-        {
-          name: "Pojkar",
-          duration: "30 min",
-          price: "330 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/barnklippning-0-12-ar-pojkar-1272146"
-        }
-      ]
-    },
-    {
-      category: "Damklippning",
-      services: [
-        {
-          name: "Kort (0–5 cm)",
-          duration: "30 min",
-          price: "440 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/damklippning-kort-0-5-cm-1272390"
-        },
-        {
-          name: "Lång (över 5 cm)",
-          duration: "60 min",
-          price: "500 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/damklippning-lang-over-5-cm-1272391"
-        }
-      ]
-    },
-    {
-      category: "Herrklippning",
-      services: [
-        {
-          name: "Standard",
-          duration: "30 min",
-          price: "440 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/herrklippning-1272142"
-        },
-        {
-          name: "Pensionär",
-          duration: "30 min",
-          price: "300 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/herrklippning-pensionar--1272145"
-        },
-        {
-          name: "Student",
-          duration: "30 min",
-          price: "350 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/herrklippning-student--1272147"
-        }
-      ]
-    },
-    {
-      category: "Herrklippning & Skägg",
-      services: [
-        {
-          name: "Kort skägg (0–2 cm)",
-          duration: "60 min",
-          price: "590 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/herrklippning-skagg-kort-skagg-0-2-cm-1272389"
-        },
-        {
-          name: "Långt skägg (över 2 cm)",
-          duration: "60 min",
-          price: "600 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/herrklippning-skagg-langt-skagg-over-2-cm-1289620"
-        },
-        {
-          name: "Pensionär",
-          duration: "30 min",
-          price: "400 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/herrklippning-skagg-pensionar--1272148"
-        },
-        {
-          name: "Student",
-          duration: "60 min",
-          price: "500 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/herrklippning-skagg-student--1272461"
-        }
-      ]
-    },
-    {
-      category: "Huvudrakning",
-      services: [
-        {
-          name: "Enbart huvudet",
-          duration: "30 min",
-          price: "350 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/huvud-rakning-1415774"
-        },
-        {
-          name: "Huvud + skägg",
-          duration: "60 min",
-          price: "600 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/huvud-rakning-skagg-1415775"
-        }
-      ]
-    },
-    {
-      category: "Skägg & Rakning",
-      services: [
-        {
-          name: "Endast skägg/rakning",
-          duration: "30 min",
-          price: "330 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/skagg-rakning-1272144"
-        }
-      ]
-    },
-    {
-      category: "Snagg / Skinfade",
-      services: [
-        {
-          name: "Snagg",
-          duration: "10 min",
-          price: "160 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/snagg-1272143"
-        },
-        {
-          name: "Snagg + skägg",
-          duration: "30 min",
-          price: "400 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/snagg-skagg-1272592"
-        },
-        {
-          name: "Snaggning & skinfade",
-          duration: "30 min",
-          price: "350 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/snaggning-skinfade-1289621"
-        },
-        {
-          name: "Snaggning skinfade & skägg",
-          duration: "60 min",
-          price: "550 kr",
-          url: "https://www.bokadirekt.se/boka-tjanst/samos-barbershop-38023/snaggning-skinfade-skagg-1950643"
-        }
-      ]
-    }
-  ];
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
-  const openBookingModal = (url: string) => {
-    setSelectedService(url);
+  const openFullscreen = () => {
+    setIsFullscreen(true);
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
   };
 
-  const closeModal = () => {
-    setSelectedService(null);
+  const closeFullscreen = () => {
+    setIsFullscreen(false);
+    // Restore body scroll
+    document.body.style.overflow = 'unset';
   };
 
-  const handleCategorySelect = (category: string) => {
-    setSelectedCategory(selectedCategory === category ? null : category);
+  const openExternalBooking = () => {
+    window.open('https://cliento.com/business/klippcenter-i-jonkoping-ab-klippcenter/#service', '_blank');
   };
 
   return (
@@ -183,89 +40,175 @@ const AvailableServiceSection = () => {
             Våra Tjänster
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
-            Professionella frisörtjänster i Jönköping sedan 2010. Välj kategori och sedan tjänst för att boka din tid enkelt online.
+            Boka din tid enkelt online genom vårt bokningssystem. Välj den tjänst som passar dig bäst 
+            och välj en tid som passar ditt schema.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          {/* Categories */}
-          <div className="space-y-3 md:space-y-4">
-            {services.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="bg-gray-50 rounded-2xl overflow-hidden shadow-sm">
-                {/* Category Header */}
-                <button
-                  onClick={() => handleCategorySelect(category.category)}
-                  className="w-full p-4 md:p-6 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors duration-200"
-                >
-                  <h2 className="text-lg md:text-xl font-bold text-gray-900 text-left">
-                    {category.category}
-                  </h2>
-                  <ChevronRight 
-                    className={`w-5 h-5 md:w-6 md:h-6 text-gray-600 transition-transform duration-200 ${
-                      selectedCategory === category.category ? 'rotate-90' : ''
-                    }`}
-                  />
-                </button>
-
-                {/* Services */}
-                {selectedCategory === category.category && (
-                  <div className="bg-white border-t border-gray-200">
-                    <div className="p-3 md:p-4 space-y-3">
-                      {category.services.map((service, serviceIndex) => (
-                        <div key={serviceIndex} className="bg-gray-50 rounded-xl p-3 md:p-4 hover:bg-gray-100 transition-colors duration-200">
-                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                            <div className="flex-1">
-                              <h3 className="font-semibold text-gray-900 text-sm md:text-base mb-1">
-                                {service.name}
-                              </h3>
-                              <div className="flex items-center text-gray-600 text-xs md:text-sm">
-                                <Clock className="w-3 h-3 md:w-4 md:h-4 mr-1" />
-                                <span>{service.duration}</span>
-                              </div>
-                            </div>
-                            
-                            <div className="flex items-center justify-between sm:justify-end gap-3">
-                              <span className="text-lg md:text-xl font-bold text-amber-500">
-                                {service.price}
-                              </span>
-                              <button
-                                onClick={() => openBookingModal(service.url)}
-                                className="bg-black hover:bg-gray-800 text-white py-2 px-4 md:py-3 md:px-6 rounded-lg font-semibold transition-colors duration-300 flex items-center text-xs md:text-sm whitespace-nowrap"
-                              >
-                                <CreditCard className="w-3 h-3 md:w-4 md:h-4 mr-2" />
-                                Boka Tid
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
+        {/* Desktop View - Embedded iframe */}
+        <div className="hidden lg:block">
+          <div className="bg-gray-50 rounded-2xl p-6 shadow-lg">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center">
+                <Calendar className="w-6 h-6 text-amber-500 mr-3" />
+                <h2 className="text-2xl font-bold text-gray-900">Boka Din Tid</h2>
               </div>
-            ))}
+              <button
+                onClick={openExternalBooking}
+                className="flex items-center text-gray-600 hover:text-amber-600 transition-colors duration-200"
+              >
+                <ExternalLink className="w-5 h-5 mr-2" />
+                Öppna i nytt fönster
+              </button>
+            </div>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm">
+              <iframe
+                src="https://cliento.com/business/klippcenter-i-jonkoping-ab-klippcenter/#service"
+                className="w-full h-[800px] border-0"
+                title="Boka tid - Klippcenter"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Tablet View - Embedded iframe with different height */}
+        <div className="hidden md:block lg:hidden">
+          <div className="bg-gray-50 rounded-2xl p-4 shadow-lg">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center">
+                <Calendar className="w-5 h-5 text-amber-500 mr-2" />
+                <h2 className="text-xl font-bold text-gray-900">Boka Din Tid</h2>
+              </div>
+              <div className="flex gap-2">
+                <button
+                  onClick={openFullscreen}
+                  className="bg-amber-500 hover:bg-amber-600 text-black px-4 py-2 rounded-lg font-semibold transition-colors duration-300 text-sm"
+                >
+                  Fullskärm
+                </button>
+                <button
+                  onClick={openExternalBooking}
+                  className="flex items-center text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm"
+                >
+                  <ExternalLink className="w-4 h-4 mr-1" />
+                  Extern
+                </button>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm">
+              <iframe
+                src="https://cliento.com/business/klippcenter-i-jonkoping-ab-klippcenter/#service"
+                className="w-full h-[600px] border-0"
+                title="Boka tid - Klippcenter"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile View - Call to action buttons */}
+        <div className="block md:hidden">
+          <div className="bg-gray-50 rounded-2xl p-6 shadow-lg">
+            <div className="text-center mb-6">
+              <Calendar className="w-12 h-12 text-amber-500 mx-auto mb-4" />
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Boka Din Tid</h2>
+              <p className="text-gray-600">
+                Välj hur du vill boka din tid - i fullskärmsläge eller i en ny flik för bästa upplevelse.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <button
+                onClick={openFullscreen}
+                className="w-full bg-amber-500 hover:bg-amber-600 text-black py-4 px-6 rounded-xl font-semibold transition-colors duration-300 flex items-center justify-center"
+              >
+                <Calendar className="w-5 h-5 mr-3" />
+                Boka i Fullskärm
+              </button>
+              
+              <button
+                onClick={openExternalBooking}
+                className="w-full bg-gray-800 hover:bg-gray-700 text-white py-4 px-6 rounded-xl font-semibold transition-colors duration-300 flex items-center justify-center"
+              >
+                <ExternalLink className="w-5 h-5 mr-3" />
+                Öppna i Ny Flik
+              </button>
+            </div>
+
+            {/* Quick info cards */}
+            <div className="grid grid-cols-2 gap-4 mt-6">
+              <div className="bg-white p-4 rounded-xl text-center">
+                <Clock className="w-6 h-6 text-amber-500 mx-auto mb-2" />
+                <p className="text-sm font-semibold text-gray-900">Snabb Bokning</p>
+                <p className="text-xs text-gray-600">Bara några klick</p>
+              </div>
+              <div className="bg-white p-4 rounded-xl text-center">
+                <Calendar className="w-6 h-6 text-amber-500 mx-auto mb-2" />
+                <p className="text-sm font-semibold text-gray-900">Flexibla Tider</p>
+                <p className="text-xs text-gray-600">Välj vad som passar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Info Section */}
+        <div className="mt-12 md:mt-16">
+          <div className="bg-black rounded-2xl p-6 md:p-8 text-white text-center">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Behöver Du Hjälp?</h3>
+            <p className="text-lg md:text-xl text-gray-300 mb-6">
+              Kontakta oss direkt om du har frågor eller behöver hjälp med bokningen
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:0361271212"
+                className="bg-amber-500 hover:bg-amber-600 text-black px-6 py-3 rounded-full font-semibold transition-colors duration-300 inline-flex items-center justify-center"
+              >
+                Ring Oss: 036-12 71 12
+              </a>
+              <button
+                onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 rounded-full font-semibold transition-colors duration-300"
+              >
+                Kontakta Oss
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Booking Modal - Optimized for all devices */}
-      {selectedService && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 md:p-4">
-          <div className="bg-white w-full h-full md:w-[98vw] md:h-[90vh] lg:w-[95vw] lg:h-[95vh] md:rounded-2xl flex flex-col mb-16 md:mb-0">
-            <div className="flex justify-between items-center p-3 md:p-4 border-b bg-gray-50 md:rounded-t-2xl flex-shrink-0">
-              <h3 className="text-sm md:text-base lg:text-lg font-bold text-gray-900">Boka Din Tid</h3>
-              <button
-                onClick={closeModal}
-                className="p-2 hover:bg-gray-200 rounded-full transition-colors duration-200"
-              >
-                <X className="w-5 h-5 md:w-6 md:h-6" />
-              </button>
+      {/* Fullscreen Modal */}
+      {isFullscreen && (
+        <div className="fixed inset-0 bg-black bg-opacity-95 flex items-center justify-center z-50">
+          <div className="w-full h-full md:w-[95vw] md:h-[95vh] bg-white md:rounded-2xl flex flex-col">
+            <div className="flex justify-between items-center p-4 border-b bg-gray-50 md:rounded-t-2xl flex-shrink-0">
+              <div className="flex items-center">
+                <Calendar className="w-6 h-6 text-amber-500 mr-3" />
+                <h3 className="text-lg md:text-xl font-bold text-gray-900">Boka Din Tid</h3>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={openExternalBooking}
+                  className="hidden md:flex items-center text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm"
+                >
+                  <ExternalLink className="w-4 h-4 mr-1" />
+                  Öppna extern
+                </button>
+                <button
+                  onClick={closeFullscreen}
+                  className="p-2 hover:bg-gray-200 rounded-full transition-colors duration-200"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
             </div>
             <div className="flex-1 overflow-hidden">
               <iframe
-                src={selectedService}
+                src="https://cliento.com/business/klippcenter-i-jonkoping-ab-klippcenter/#service"
                 className="w-full h-full border-0"
-                title="Boka tid - Samos Barbershop"
+                title="Boka tid - Klippcenter"
               />
             </div>
           </div>
