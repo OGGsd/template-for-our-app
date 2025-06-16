@@ -17,7 +17,7 @@ Disallow: /api/
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://samosbarbershop.vercel.app/sitemap.xml
+Sitemap: https://klippcenter-jkpg.vercel.app/sitemap.xml
 
 # Additional sitemaps (if needed)
-Sitemap: https://samosbarbershop.vercel.app/sitemap-images.xml
+Sitemap: https://klippcenter-jkpg.vercel.app/sitemap-images.xml

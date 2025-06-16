@@ -1,5 +1,5 @@
 {
-  "name": "samos-barbershop",
+  "name": "klippcenter-jkpg",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "pwa:build": "vite build",
-    "lighthouse": "npx lighthouse https://samosbarbershop.vercel.app --output=html --output-path=./lighthouse-report.html --chrome-flags='--headless'"
+    "lighthouse": "npx lighthouse https://klippcenter-jkpg.vercel.app --output=html --output-path=./lighthouse-report.html --chrome-flags='--headless'"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",

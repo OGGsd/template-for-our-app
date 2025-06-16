@@ -1,16 +1,15 @@
-const CACHE_NAME = 'samos-barbershop-v2.0.0';
-const STATIC_CACHE = 'samos-static-v2.0.0';
-const DYNAMIC_CACHE = 'samos-dynamic-v2.0.0';
-const IMAGE_CACHE = 'samos-images-v2.0.0';
+const CACHE_NAME = 'klippcenter-jkpg-v2.0.0';
+const STATIC_CACHE = 'klippcenter-static-v2.0.0';
+const DYNAMIC_CACHE = 'klippcenter-dynamic-v2.0.0';
+const IMAGE_CACHE = 'klippcenter-images-v2.0.0';
 
 // Core files to cache immediately for TWA compatibility
 const CORE_FILES = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/logo.png',
-  '/About Us Image.jpg',
-  '/About Us Image copy copy.jpg'
+  '/Logo.jpg',
+  '/Hero Section Background.jpg'
 ];
 
 // Static assets to cache
@@ -155,7 +154,7 @@ self.addEventListener('fetch', (event) => {
             `<!DOCTYPE html>
             <html lang="sv">
             <head>
-              <title>Samos Barbershop - Offline</title>
+              <title>KLIPPCENTER | JKPG - Offline</title>
               <meta charset="UTF-8">
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
               <style>
@@ -163,7 +162,7 @@ self.addEventListener('fetch', (event) => {
                   font-family: 'Inter', Arial, sans-serif; 
                   text-align: center; 
                   padding: 40px 20px; 
-                  background: linear-gradient(135deg, #f59e0b, #d97706);
+                  background: linear-gradient(135deg, #99695a, #b77a68);
                   min-height: 100vh;
                   margin: 0;
                   display: flex;
@@ -180,7 +179,7 @@ self.addEventListener('fetch', (event) => {
                 .logo {
                   width: 80px;
                   height: 80px;
-                  background: black;
+                  background: #99695a;
                   border-radius: 20px;
                   margin: 0 auto 20px;
                   display: flex;
@@ -202,8 +201,8 @@ self.addEventListener('fetch', (event) => {
                   line-height: 1.6;
                 }
                 .btn {
-                  background: #f59e0b;
-                  color: black;
+                  background: #99695a;
+                  color: white;
                   padding: 15px 30px;
                   border: none;
                   border-radius: 25px;
@@ -216,7 +215,7 @@ self.addEventListener('fetch', (event) => {
                   margin: 5px;
                 }
                 .btn:hover {
-                  background: #d97706;
+                  background: #b77a68;
                   transform: translateY(-2px);
                 }
                 .offline-features {
@@ -239,7 +238,7 @@ self.addEventListener('fetch', (event) => {
             </head>
             <body>
               <div class="offline-container">
-                <div class="logo">S</div>
+                <div class="logo">K</div>
                 <h1>🔌 Du är offline</h1>
                 <p>Ingen internetanslutning hittades, men du kan fortfarande använda vissa funktioner.</p>
                 
@@ -258,7 +257,7 @@ self.addEventListener('fetch', (event) => {
                   </div>
                 </div>
                 
-                <a href="tel:0361271212" class="btn">📞 Ring: 036-12 71 12</a>
+                <a href="tel:036712300" class="btn">📞 Ring: 036-712 300</a>
                 <button onclick="window.location.reload()" class="btn">🔄 Försök igen</button>
               </div>
             </body>
@@ -280,7 +279,7 @@ self.addEventListener('fetch', (event) => {
               <circle cx="200" cy="120" r="30" fill="#d1d5db"/>
               <rect x="170" y="160" width="60" height="40" rx="5" fill="#d1d5db"/>
               <text x="200" y="220" text-anchor="middle" fill="#6b7280" font-family="Arial" font-size="14">
-                Samos Barbershop
+                KLIPPCENTER | JKPG
               </text>
               <text x="200" y="240" text-anchor="middle" fill="#9ca3af" font-family="Arial" font-size="12">
                 Bild ej tillgänglig offline
@@ -327,11 +326,11 @@ self.addEventListener('push', (event) => {
   console.log('PWA: Push notification received');
   
   let notificationData = {
-    title: 'Samos Barbershop',
-    body: 'Ny uppdatering från Samos Barbershop',
-    icon: '/logo.png',
-    badge: '/logo.png',
-    image: '/About Us Image.jpg'
+    title: 'KLIPPCENTER | JKPG',
+    body: 'Ny uppdatering från KLIPPCENTER | JKPG',
+    icon: '/Logo.jpg',
+    badge: '/Logo.jpg',
+    image: '/Hero Section Background.jpg'
   };
 
   if (event.data) {
@@ -357,12 +356,12 @@ self.addEventListener('push', (event) => {
       {
         action: 'open',
         title: 'Öppna App',
-        icon: '/logo.png'
+        icon: '/Logo.jpg'
       },
       {
         action: 'book',
         title: 'Boka Tid',
-        icon: '/logo.png'
+        icon: '/Logo.jpg'
       },
       {
         action: 'close',
@@ -389,7 +388,7 @@ self.addEventListener('notificationclick', (event) => {
   if (event.action === 'open') {
     targetUrl = event.notification.data?.url || '/';
   } else if (event.action === 'book') {
-    targetUrl = '/#tjanster';
+    targetUrl = '/#behandlingar';
   } else if (event.action === 'close') {
     return;
   } else {

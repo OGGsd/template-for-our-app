@@ -5,38 +5,38 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://samosbarbershop.vercel.app/</loc>
+    <loc>https://klippcenter-jkpg.vercel.app/</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://samosbarbershop.vercel.app/About%20Us%20Image.jpg</image:loc>
-      <image:title>Samos Barbershop Interiör</image:title>
-      <image:caption>Professionell frisörsalong i Jönköping sedan 2010</image:caption>
+      <image:loc>https://klippcenter-jkpg.vercel.app/Hero%20Section%20Background.jpg</image:loc>
+      <image:title>KLIPPCENTER | JKPG Interiör</image:title>
+      <image:caption>Professionell frisörsalong i Jönköping sedan 1996</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://samosbarbershop.vercel.app/logo.png</image:loc>
-      <image:title>Samos Barbershop Logotyp</image:title>
-      <image:caption>Samos Barbershop officiell logotyp</image:caption>
+      <image:loc>https://klippcenter-jkpg.vercel.app/Logo.jpg</image:loc>
+      <image:title>KLIPPCENTER | JKPG Logotyp</image:title>
+      <image:caption>KLIPPCENTER | JKPG officiell logotyp</image:caption>
     </image:image>
   </url>
 
   <!-- Om Oss -->
   <url>
-    <loc>https://samosbarbershop.vercel.app/#om-oss</loc>
+    <loc>https://klippcenter-jkpg.vercel.app/#om-oss</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://samosbarbershop.vercel.app/About%20Us%20Image.jpg</image:loc>
-      <image:title>Om Samos Barbershop</image:title>
+      <image:loc>https://klippcenter-jkpg.vercel.app/Hero%20Section%20Background.jpg</image:loc>
+      <image:title>Om KLIPPCENTER | JKPG</image:title>
       <image:caption>Vår historia och professionella salong i Jönköping</image:caption>
     </image:image>
   </url>
 
   <!-- Tjänster -->
   <url>
-    <loc>https://samosbarbershop.vercel.app/#tjanster</loc>
+    <loc>https://klippcenter-jkpg.vercel.app/#tjanster</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
@@ -44,55 +44,38 @@
 
   <!-- Team -->
   <url>
-    <loc>https://samosbarbershop.vercel.app/#team</loc>
+    <loc>https://klippcenter-jkpg.vercel.app/#team</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <video:video>
-      <video:thumbnail_loc>https://samosbarbershop.vercel.app/About%20Us%20Image.jpg</video:thumbnail_loc>
-      <video:title>Samos Barbershop Expert Team</video:title>
-      <video:description>Möt vårt professionella team av erfarna frisörer</video:description>
-      <video:content_loc>https://fvega0dwq1jnr8l4.public.blob.vercel-storage.com/Samo-3ncHNSLoiKOOfLCZKmqco2JD9c3XnU.mp4</video:content_loc>
-      <video:duration>30</video:duration>
-    </video:video>
   </url>
 
   <!-- Galleri -->
   <url>
-    <loc>https://samosbarbershop.vercel.app/#galleri</loc>
+    <loc>https://klippcenter-jkpg.vercel.app/#galleri</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://samosbarbershop.vercel.app/471185434_8897472130370157_3393166292361676614_n.jpg</image:loc>
-      <image:title>Professionell herrklippning och skäggvård</image:title>
-      <image:caption>Exempel på vårt professionella arbete - herrklippning med skägg</image:caption>
+      <image:loc>https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/467557892_1109769721157662_1599765407150624323_n-yozQket8AfqAoLwNGGaA111ii9AjwJ.jpg</image:loc>
+      <image:title>Professionell damklippning - KLIPPCENTER | JKPG</image:title>
+      <image:caption>Exempel på vårt professionella arbete - damklippning</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://samosbarbershop.vercel.app/472717746_18480056608019357_2194470320329801997_n.jpg</image:loc>
-      <image:title>Modern fade klippning</image:title>
-      <image:caption>Professionell fade klippning och styling</image:caption>
+      <image:loc>https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/467693322_1109769724490995_6501380672227294028_n-vgXAzdAKodC0wn0agNewH4rLisw669.jpg</image:loc>
+      <image:title>Modern styling och klippning</image:title>
+      <image:caption>Professionell frisörtjänst - KLIPPCENTER | JKPG</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://samosbarbershop.vercel.app/481081263_1178548567608249_1938184152183028041_n.jpg</image:loc>
-      <image:title>Textured crop herrklippning</image:title>
-      <image:caption>Modern textured crop klippning</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://samosbarbershop.vercel.app/482006749_1174380044691768_7495139255548235610_n.jpg</image:loc>
-      <image:title>Klassisk herrklippning med skägg</image:title>
-      <image:caption>Klassisk stil med professionell skäggvård</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://samosbarbershop.vercel.app/482344054_1179377524192020_7227784331582757862_n.jpg</image:loc>
-      <image:title>Precision klippning och styling</image:title>
-      <image:caption>Precision klippning med modern styling</image:caption>
+      <image:loc>https://mnep11uygvxnyj6a.public.blob.vercel-storage.com/rgtr/470049398_1127609459373688_4444315445942757206_n-8bWahkpMkpnZ3Ar1CgeUFDOR4oVBNH.jpg</image:loc>
+      <image:title>Elegant uppsättning och styling</image:title>
+      <image:caption>KLIPPCENTER | JKPG professionella tjänster</image:caption>
     </image:image>
   </url>
 
   <!-- Kontakt -->
   <url>
-    <loc>https://samosbarbershop.vercel.app/#kontakt</loc>
+    <loc>https://klippcenter-jkpg.vercel.app/#kontakt</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -100,28 +83,28 @@
 
   <!-- Service-specific pages (virtual) -->
   <url>
-    <loc>https://samosbarbershop.vercel.app/tjanster/herrklippning</loc>
+    <loc>https://klippcenter-jkpg.vercel.app/tjanster/damklippning</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://samosbarbershop.vercel.app/tjanster/damklippning</loc>
+    <loc>https://klippcenter-jkpg.vercel.app/tjanster/fargning</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://samosbarbershop.vercel.app/tjanster/skaggvard</loc>
+    <loc>https://klippcenter-jkpg.vercel.app/tjanster/styling</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://samosbarbershop.vercel.app/tjanster/barnklippning</loc>
+    <loc>https://klippcenter-jkpg.vercel.app/tjanster/barnklippning</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
