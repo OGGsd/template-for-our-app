@@ -95,9 +95,6 @@ const Gallery = () => {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-2 md:bottom-3 lg:bottom-4 left-2 md:left-3 lg:left-4 text-white">
-                  <p className="font-semibold text-xs md:text-sm lg:text-base">KLIPPCENTER | JKPG</p>
-                </div>
               </div>
             </div>
           ))}

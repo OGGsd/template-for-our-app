@@ -89,7 +89,7 @@ const HudvardSection = () => {
 
             {/* Image Box - Right Side */}
             <div className="flex-1 min-w-0">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[300px] lg:min-h-[400px]">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[250px] lg:min-h-[350px]">
                 <img
                   src="https://images.pexels.com/photos/3985360/pexels-photo-3985360.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Skin & Care by Amanda - Professionell hudvård i Jönköping"
