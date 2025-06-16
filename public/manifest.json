@@ -1,28 +1,28 @@
 {
-  "name": "Samos Barbershop - Professionell Frisörsalong i Jönköping",
-  "short_name": "Samos Barbershop",
-  "description": "Professionell frisörsalong sedan 2010. Boka tid för herrklippning, damklippning, skäggvård och mer på Klostergatan 50B i Jönköping.",
+  "name": "KLIPPCENTER | JKPG - Professionell Frisörsalong i Jönköping",
+  "short_name": "KLIPPCENTER | JKPG",
+  "description": "En frisör mitt i Jönköping. Professionell frisörsalong för herrklippning, damklippning och frisörtjänster på Barnarpsgatan 3.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "theme_color": "#3b82f6",
   "categories": ["lifestyle", "business", "health"],
   "lang": "sv",
   "dir": "ltr",
   "prefer_related_applications": false,
   "icons": [
     {
-      "src": "/logo.png",
+      "src": "/Logo.jpg",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any maskable"
     },
     {
-      "src": "/logo.png",
+      "src": "/Logo.jpg",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any maskable"
     }
   ],
@@ -34,7 +34,7 @@
       "url": "/#tjanster",
       "icons": [
         {
-          "src": "/logo.png",
+          "src": "/Logo.jpg",
           "sizes": "192x192"
         }
       ]
@@ -43,10 +43,10 @@
       "name": "Ring Oss",
       "short_name": "Ring",
       "description": "Ring direkt till salongen",
-      "url": "tel:0361271212",
+      "url": "tel:036712300",
       "icons": [
         {
-          "src": "/logo.png",
+          "src": "/Logo.jpg",
           "sizes": "192x192"
         }
       ]
@@ -58,19 +58,7 @@
       "url": "/#kontakt",
       "icons": [
         {
-          "src": "/logo.png",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "Galleri",
-      "short_name": "Galleri",
-      "description": "Se vårt arbete och inspiration",
-      "url": "/#galleri",
-      "icons": [
-        {
-          "src": "/logo.png",
+          "src": "/Logo.jpg",
           "sizes": "192x192"
         }
       ]
@@ -78,11 +66,11 @@
   ],
   "screenshots": [
     {
-      "src": "/About Us Image.jpg",
+      "src": "/Hero Section Background.jpg",
       "sizes": "1280x720",
       "type": "image/jpeg",
       "form_factor": "wide",
-      "label": "Samos Barbershop huvudsida"
+      "label": "KLIPPCENTER | JKPG huvudsida"
     }
   ],
   "related_applications": [],
