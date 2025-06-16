@@ -3,15 +3,15 @@ import { MapPin, Phone, Clock, Mail, Navigation } from 'lucide-react';
 
 const ContactSection = () => {
   const openMaps = () => {
-    window.open('https://maps.google.com/?q=Klostergatan+50B,+553+35+Jönköping', '_blank');
+    window.open('https://maps.google.com/?q=Barnarpsgatan+3,+553+16+Jönköping', '_blank');
   };
 
   const callPhone = () => {
-    window.open('tel:0361271212');
+    window.open('tel:036712300');
   };
 
   const sendEmail = () => {
-    window.open('mailto:samosbarbershop@gmail.com');
+    window.open('mailto:info@klippcenter-jkpg.se');
   };
 
   return (
@@ -23,7 +23,7 @@ const ContactSection = () => {
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
             Vi finns här för att hjälpa dig. Kontakta oss för att boka tid eller 
-            om du har några frågor om våra tjänster. Välkommen till Samos Barbershop!
+            om du har några frågor om våra tjänster. Välkommen till KLIPPCENTER | JKPG!
           </p>
         </div>
 
@@ -41,10 +41,10 @@ const ContactSection = () => {
                   </div>
                   <div className="min-w-0 flex-1">
                     <h3 className="font-semibold text-gray-900 mb-1">Adress</h3>
-                    <p className="text-gray-600 text-sm md:text-base">Klostergatan 50B<br />553 35 Jönköping</p>
+                    <p className="text-gray-600 text-sm md:text-base">Barnarpsgatan 3<br />553 16 Jönköping</p>
                     <button 
                       onClick={openMaps}
-                      className="text-amber-600 hover:text-amber-700 font-medium mt-2 flex items-center justify-center md:justify-start text-sm md:text-base"
+                      className="text-blue-600 hover:text-blue-700 font-medium mt-2 flex items-center justify-center md:justify-start text-sm md:text-base"
                     >
                       <Navigation className="w-3 h-3 md:w-4 md:h-4 mr-1" />
                       Visa vägbeskrivning
@@ -60,9 +60,9 @@ const ContactSection = () => {
                     <h3 className="font-semibold text-gray-900 mb-1">Telefon</h3>
                     <button 
                       onClick={callPhone}
-                      className="text-gray-600 hover:text-amber-600 transition-colors text-sm md:text-base"
+                      className="text-gray-600 hover:text-blue-600 transition-colors text-sm md:text-base"
                     >
-                      036-12 71 12
+                      036-712 300
                     </button>
                   </div>
                 </div>
@@ -75,9 +75,9 @@ const ContactSection = () => {
                     <h3 className="font-semibold text-gray-900 mb-1">E-post</h3>
                     <button 
                       onClick={sendEmail}
-                      className="text-gray-600 hover:text-amber-600 transition-colors text-sm md:text-base break-all"
+                      className="text-gray-600 hover:text-blue-600 transition-colors text-sm md:text-base break-all"
                     >
-                      samosbarbershop@gmail.com
+                      info@klippcenter-jkpg.se
                     </button>
                   </div>
                 </div>
@@ -89,9 +89,8 @@ const ContactSection = () => {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Öppettider</h3>
                     <div className="text-gray-600 space-y-1 text-sm md:text-base">
-                      <p>Måndag - Torsdag: 09:00 - 18:00</p>
-                      <p>Fredag: 09:00 - 19:00</p>
-                      <p>Lördag: 09:00 - 14:00</p>
+                      <p>Måndag - Fredag: 08:00 - 17:00-20:00</p>
+                      <p>Lönelördagen: 09:00 - 15:00</p>
                       <p className="text-red-600 font-medium">Söndag: Stängt</p>
                     </div>
                   </div>
@@ -109,7 +108,7 @@ const ContactSection = () => {
               </button>
               <button 
                 onClick={callPhone}
-                className="bg-amber-500 hover:bg-amber-600 text-black p-4 md:p-6 rounded-xl font-semibold transition-colors duration-300 text-sm md:text-base"
+                className="bg-blue-500 hover:bg-blue-600 text-white p-4 md:p-6 rounded-xl font-semibold transition-colors duration-300 text-sm md:text-base"
               >
                 Ring Oss Nu
               </button>
@@ -122,8 +121,8 @@ const ContactSection = () => {
             <div className="bg-gray-200 rounded-xl h-64 md:h-96 flex items-center justify-center">
               <div className="text-center text-gray-600 px-4">
                 <MapPin className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4" />
-                <p className="text-lg font-semibold mb-2">Samos Barbershop</p>
-                <p className="text-sm md:text-base mb-2">Klostergatan 50B, Jönköping</p>
+                <p className="text-lg font-semibold mb-2">KLIPPCENTER | JKPG</p>
+                <p className="text-sm md:text-base mb-2">Barnarpsgatan 3, Jönköping</p>
                 <p className="text-xs md:text-sm text-gray-500 mb-4">Centralt beläget i Jönköping centrum</p>
                 <button 
                   onClick={openMaps}

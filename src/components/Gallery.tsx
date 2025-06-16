@@ -6,28 +6,28 @@ const Gallery = () => {
 
   const galleryImages = [
     {
-      src: "/About-Us-Image.jpg",
-      alt: "Samos Barbershop interiör - professionell frisörsalong i Jönköping"
+      src: "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=800",
+      alt: "KLIPPCENTER | JKPG interiör - professionell frisörsalong"
     },
     {
-      src: "/471185434_8897472130370157_3393166292361676614_n copy.jpg",
-      alt: "Professionell herrklippning med skäggvård - Samos Barbershop"
+      src: "https://images.pexels.com/photos/3998365/pexels-photo-3998365.jpeg?auto=compress&cs=tinysrgb&w=800",
+      alt: "Professionell herrklippning - KLIPPCENTER | JKPG"
     },
     {
-      src: "/472717746_18480056608019357_2194470320329801997_n copy.jpg",
-      alt: "Modern fade klippning och styling - expertarbete"
+      src: "https://images.pexels.com/photos/3992656/pexels-photo-3992656.jpeg?auto=compress&cs=tinysrgb&w=800",
+      alt: "Modern damklippning och styling - expertarbete"
     },
     {
-      src: "/481081263_1178548567608249_1938184152183028041_n copy.jpg",
-      alt: "Textured crop herrklippning - modern stil"
+      src: "https://images.pexels.com/photos/3992739/pexels-photo-3992739.jpeg?auto=compress&cs=tinysrgb&w=800",
+      alt: "Professionell frisörtjänster - modern stil"
     },
     {
-      src: "/482006749_1174380044691768_7495139255548235610_n copy.jpg",
-      alt: "Klassisk herrklippning med professionell skäggvård"
+      src: "https://images.pexels.com/photos/3992663/pexels-photo-3992663.jpeg?auto=compress&cs=tinysrgb&w=800",
+      alt: "Klassisk herrklippning med professionell service"
     },
     {
-      src: "/482344054_1179377524192020_7227784331582757862_n copy.jpg",
-      alt: "Precision klippning och styling - Samos Barbershop expertis"
+      src: "https://images.pexels.com/photos/3992741/pexels-photo-3992741.jpeg?auto=compress&cs=tinysrgb&w=800",
+      alt: "Precision klippning och styling - KLIPPCENTER | JKPG expertis"
     }
   ];
 
@@ -77,16 +77,6 @@ const Gallery = () => {
                 alt={image.alt}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
-                onError={(e) => {
-                  console.log(`Gallery image failed to load: ${image.src}`);
-                  const target = e.currentTarget;
-                  // Hide broken image
-                  target.style.display = 'none';
-                  const parent = target.parentElement;
-                  if (parent) {
-                    parent.style.display = 'none';
-                  }
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 text-white">
@@ -129,10 +119,6 @@ const Gallery = () => {
                 src={galleryImages[selectedImage].src}
                 alt={galleryImages[selectedImage].alt}
                 className="w-full h-full object-contain rounded-lg"
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  console.log(`Modal image failed to load: ${target.src}`);
-                }}
               />
               
               <div className="absolute bottom-4 left-4 text-white bg-black/50 rounded-lg p-3">

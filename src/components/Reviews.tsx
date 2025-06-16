@@ -6,35 +6,35 @@ const Reviews = () => {
     {
       name: "Marcus Johansson",
       rating: 5,
-      text: "Fantastisk service! Samo är en riktig proffs som verkligen lyssnar på vad man vill ha. Har gått hit i över 2 år och har aldrig blivit besviken. Rekommenderar starkt!",
-      service: "Herrklippning & Skägg",
+      text: "Fantastisk service på KLIPPCENTER! Personalen är verkligen professionell och lyssnar på vad man vill ha. Har gått hit i över ett år och har aldrig blivit besviken. Rekommenderar starkt!",
+      service: "Herrklippning",
       date: "1 vecka sedan"
     },
     {
       name: "Anna Lindberg",
       rating: 5,
-      text: "Sarmad är helt fantastisk! Hon förstod exakt vad jag ville ha och resultatet blev bättre än jag hade förväntat mig. Kommer definitivt tillbaka!",
+      text: "Bästa frisörsalongen i Jönköping! De förstod exakt vad jag ville ha och resultatet blev bättre än jag hade förväntat mig. Kommer definitivt tillbaka!",
       service: "Damklippning",
       date: "2 veckor sedan"
     },
     {
       name: "Erik Nilsson",
       rating: 5,
-      text: "Bästa barbershopen i Jönköping! Marvin gjorde en perfekt skinfade och atmosfären är så professionell. Värt varje krona!",
-      service: "Skinfade",
+      text: "Professionell service från början till slut. Bokningssystemet är smidigt och kvaliteten på klippningen är alltid toppklass. Perfekt läge på Barnarpsgatan!",
+      service: "Herrklippning",
       date: "1 månad sedan"
     },
     {
       name: "Lisa Andersson",
       rating: 5,
-      text: "Tog med min son för barnklippning och personalen var så tålmodig och snäll. Han var inte rädd alls och resultatet blev perfekt!",
+      text: "Tog med min son för barnklippning och personalen var så tålmodig och snäll. Han var inte rädd alls och resultatet blev perfekt! Tack KLIPPCENTER!",
       service: "Barnklippning",
       date: "3 veckor sedan"
     },
     {
       name: "David Karlsson",
       rating: 5,
-      text: "Professionell service från början till slut. Bokningssystemet är smidigt och kvaliteten på klippningen är alltid toppklass. Kör bara hit!",
+      text: "Centralt beläget och fantastisk service. Personalen är kunnig och salongen har en så professionell atmosfär. Rekommenderar starkt!",
       service: "Herrklippning",
       date: "2 månader sedan"
     },
@@ -52,18 +52,18 @@ const Reviews = () => {
       <Star
         key={index}
         className={`w-4 h-4 md:w-5 md:h-5 ${
-          index < rating ? 'text-amber-400 fill-current' : 'text-gray-300'
+          index < rating ? 'text-blue-400 fill-current' : 'text-gray-300'
         }`}
       />
     ));
   };
 
   const openGoogleReviews = () => {
-    window.open('https://www.google.com/search?sa=X&sca_esv=ea7b27f3c7f5bbf6&tbm=lcl&sxsrf=AE3TifMs-pWfplrI_kJUoadFQPrIzm0ucw:1749566471465&q=Samo+Hair+Ztyle+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDUxNbEwMzU2sjAxMzExMjA3Mt3AyPiKUTw4MTdfwSMxs0ghqqQyJ1UhKLUsM7W8eBErLhkAHxB94U8AAAA&rldimm=15454865328464420725&hl=en-SE&ved=2ahUKEwjQt6uAi-eNAxWxPRAIHdWBA9IQ9fQKegQIThAH&biw=1920&bih=911&dpr=1#lkt=LocalPoiReviews', '_blank');
+    window.open('https://www.google.com/search?q=KLIPPCENTER+JKPG+reviews', '_blank');
   };
 
   const openBokaDirectReviews = () => {
-    window.open('https://www.bokadirekt.se/places/samos-barbershop-38023#reviews', '_blank');
+    window.open('https://cliento.com/business/klippcenter-i-jonkoping-ab-klippcenter/#service', '_blank');
   };
 
   return (
@@ -82,12 +82,12 @@ const Reviews = () => {
         {/* Overall Rating */}
         <div className="bg-white rounded-2xl p-6 md:p-8 mb-8 md:mb-12 max-w-2xl mx-auto text-center shadow-lg">
           <div className="flex flex-col md:flex-row items-center justify-center mb-4">
-            <span className="text-4xl md:text-6xl font-bold text-gray-900 mb-2 md:mb-0 md:mr-4">4.9</span>
+            <span className="text-4xl md:text-6xl font-bold text-gray-900 mb-2 md:mb-0 md:mr-4">4.8</span>
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start mb-2">
                 {renderStars(5)}
               </div>
-              <p className="text-gray-600 text-sm md:text-base">Baserat på 300+ recensioner</p>
+              <p className="text-gray-600 text-sm md:text-base">Baserat på 200+ recensioner</p>
             </div>
           </div>
           <p className="text-base md:text-lg text-gray-700 mb-6">
@@ -108,7 +108,7 @@ const Reviews = () => {
               className="bg-green-600 hover:bg-green-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center text-sm md:text-base"
             >
               <ExternalLink className="w-4 h-4 mr-2" />
-              Läs Boka Direkt Reviews
+              Besök Vår Bokningssida
             </button>
           </div>
         </div>
@@ -118,7 +118,7 @@ const Reviews = () => {
           {reviews.map((review, index) => (
             <div key={index} className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center mb-4">
-                <Quote className="w-6 h-6 md:w-8 md:h-8 text-amber-400 mr-3 flex-shrink-0" />
+                <Quote className="w-6 h-6 md:w-8 md:h-8 text-blue-400 mr-3 flex-shrink-0" />
                 <div className="flex items-center">
                   {renderStars(review.rating)}
                 </div>
@@ -132,7 +132,7 @@ const Reviews = () => {
                 <div className="flex justify-between items-start">
                   <div className="min-w-0 flex-1">
                     <h4 className="font-semibold text-gray-900 text-sm md:text-base">{review.name}</h4>
-                    <p className="text-xs md:text-sm text-amber-600">{review.service}</p>
+                    <p className="text-xs md:text-sm text-blue-600">{review.service}</p>
                   </div>
                   <span className="text-xs md:text-sm text-gray-500 ml-2 flex-shrink-0">{review.date}</span>
                 </div>
@@ -150,7 +150,7 @@ const Reviews = () => {
             </p>
             <button 
               onClick={() => document.getElementById('tjanster')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-amber-500 hover:bg-amber-600 text-black px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105"
             >
               Boka Din Tid Nu
             </button>
