@@ -52,13 +52,13 @@ const Gallery = () => {
   };
 
   return (
-    <section id="galleri" className="py-16 md:py-20 bg-white pb-20 lg:pb-16">
+    <section id="galleri" className="py-16 md:py-20 bg-light-green pb-20 lg:pb-16">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12 md:mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-4 md:mb-6">
             Vårt Arbete
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-lg md:text-xl text-tertiary max-w-3xl mx-auto leading-relaxed px-4">
             Se exempel på vårt professionella hantverk. Varje klippning är unikt anpassad 
             efter kundens önskemål och ansiktsform. Från klassiska stilar till moderna trends.
           </p>
@@ -69,7 +69,7 @@ const Gallery = () => {
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className="relative group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-square"
+              className="relative group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-square border border-soft-green"
               onClick={() => openModal(index)}
             >
               <img
@@ -78,7 +78,7 @@ const Gallery = () => {
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 text-white">
                   <p className="font-semibold text-sm md:text-base">{image.alt}</p>
                 </div>

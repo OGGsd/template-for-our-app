@@ -138,10 +138,10 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-black text-white">
+      <footer className="bg-dark text-white">
         {/* PWA Install Banner - Only show if not installed and install prompt is available */}
         {showInstallButton && !isInstalled && (
-          <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3">
+          <div className="bg-gradient-to-r from-primary to-secondary text-white py-3">
             <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 max-w-7xl">
               <div className="flex items-center text-center sm:text-left">
                 <Download className="w-5 h-5 mr-2 flex-shrink-0" />
@@ -150,14 +150,14 @@ const Footer = () => {
               <div className="flex gap-2">
                 <button
                   onClick={handleInstallClick}
-                  className="bg-black text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300 text-sm md:text-base flex items-center"
+                  className="bg-dark text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300 text-sm md:text-base flex items-center"
                 >
                   <Download className="w-4 h-4 mr-2" />
                   Installera Nu
                 </button>
                 <button
                   onClick={() => setShowInstallButton(false)}
-                  className="bg-transparent border border-black text-black px-3 py-2 rounded-lg font-semibold hover:bg-black hover:text-white transition-colors duration-300 text-sm"
+                  className="bg-transparent border border-white text-white px-3 py-2 rounded-lg font-semibold hover:bg-white hover:text-dark transition-colors duration-300 text-sm"
                 >
                   Senare
                 </button>
@@ -189,7 +189,7 @@ const Footer = () => {
                 href="https://www.instagram.com/klippcenter_jkpg/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-gray-800 hover:bg-blue-500 p-3 md:p-4 rounded-full transition-colors duration-300"
+                className="bg-gray-800 hover:bg-primary p-3 md:p-4 rounded-full transition-colors duration-300"
                 aria-label="Följ oss på Instagram"
               >
                 <Instagram className="w-5 h-5 md:w-6 md:h-6" />
@@ -198,7 +198,7 @@ const Footer = () => {
                 href="https://www.facebook.com/klippcenter?locale=sv_SE" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-gray-800 hover:bg-blue-500 p-3 md:p-4 rounded-full transition-colors duration-300"
+                className="bg-gray-800 hover:bg-primary p-3 md:p-4 rounded-full transition-colors duration-300"
                 aria-label="Följ oss på Facebook"
               >
                 <Facebook className="w-5 h-5 md:w-6 md:h-6" />
@@ -215,7 +215,7 @@ const Footer = () => {
                 <li>
                   <button 
                     onClick={() => scrollToSection('hem')}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm md:text-base"
+                    className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm md:text-base"
                   >
                     Hem
                   </button>
@@ -223,7 +223,7 @@ const Footer = () => {
                 <li>
                   <button 
                     onClick={() => scrollToSection('om-oss')}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm md:text-base"
+                    className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm md:text-base"
                   >
                     Om Oss
                   </button>
@@ -231,7 +231,7 @@ const Footer = () => {
                 <li>
                   <button 
                     onClick={() => scrollToSection('tjanster')}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm md:text-base"
+                    className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm md:text-base"
                   >
                     Tjänster
                   </button>
@@ -239,7 +239,7 @@ const Footer = () => {
                 <li>
                   <button 
                     onClick={() => scrollToSection('galleri')}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm md:text-base"
+                    className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm md:text-base"
                   >
                     Galleri
                   </button>
@@ -252,26 +252,26 @@ const Footer = () => {
               <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6">Kontakt</h3>
               <ul className="space-y-3 md:space-y-4">
                 <li className="flex flex-col items-center">
-                  <MapPin className="w-4 h-4 md:w-5 md:h-5 mb-2 text-blue-400" />
+                  <MapPin className="w-4 h-4 md:w-5 md:h-5 mb-2 text-primary" />
                   <div>
                     <p className="text-gray-300 text-sm md:text-base">Barnarpsgatan 3</p>
                     <p className="text-gray-300 text-sm md:text-base">553 16 Jönköping</p>
                   </div>
                 </li>
                 <li className="flex flex-col items-center">
-                  <Phone className="w-4 h-4 md:w-5 md:h-5 mb-2 text-blue-400" />
+                  <Phone className="w-4 h-4 md:w-5 md:h-5 mb-2 text-primary" />
                   <a 
                     href="tel:036712300" 
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm md:text-base"
+                    className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm md:text-base"
                   >
                     036-712 300
                   </a>
                 </li>
                 <li className="flex flex-col items-center">
-                  <Mail className="w-4 h-4 md:w-5 md:h-5 mb-2 text-blue-400" />
+                  <Mail className="w-4 h-4 md:w-5 md:h-5 mb-2 text-primary" />
                   <a 
                     href="mailto:info@klippcenter-jkpg.se" 
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm md:text-base break-all"
+                    className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm md:text-base break-all"
                   >
                     info@klippcenter-jkpg.se
                   </a>
@@ -285,11 +285,11 @@ const Footer = () => {
               <div className="space-y-2 text-sm md:text-base">
                 <div>
                   <p className="text-gray-300">Måndag - Fredag</p>
-                  <p className="text-blue-400 font-semibold">08:00 - 17:00-20:00</p>
+                  <p className="text-primary font-semibold">08:00 - 17:00-20:00</p>
                 </div>
                 <div>
                   <p className="text-gray-300">Lönelördagen</p>
-                  <p className="text-blue-400 font-semibold">09:00 - 15:00</p>
+                  <p className="text-primary font-semibold">09:00 - 15:00</p>
                 </div>
                 <div>
                   <p className="text-gray-300">Söndag</p>
@@ -304,7 +304,7 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button 
                 onClick={() => scrollToSection('tjanster')}
-                className="bg-blue-500 hover:bg-blue-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center"
+                className="bg-primary hover:bg-secondary text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center"
               >
                 <Scissors className="w-4 h-4 md:w-5 md:h-5 mr-2" />
                 Boka Tid Nu
@@ -314,7 +314,7 @@ const Footer = () => {
               {!isInstalled && (
                 <button
                   onClick={handleInstallClick}
-                  className="bg-gray-800 hover:bg-gray-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center text-base md:text-lg border border-gray-600 hover:border-blue-500"
+                  className="bg-gray-800 hover:bg-gray-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center text-base md:text-lg border border-gray-600 hover:border-primary"
                   title="Installera appen för snabbare åtkomst och offline-funktioner"
                 >
                   <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
@@ -337,7 +337,7 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4">
               <button
                 onClick={() => setShowPrivacyPolicy(true)}
-                className="flex items-center text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm md:text-base"
+                className="flex items-center text-gray-400 hover:text-primary transition-colors duration-300 text-sm md:text-base"
               >
                 <Shield className="w-4 h-4 mr-2" />
                 Integritetspolicy
@@ -345,14 +345,14 @@ const Footer = () => {
               <span className="hidden sm:block text-gray-600">•</span>
               <a
                 href="mailto:info@klippcenter-jkpg.se?subject=GDPR%20Förfrågan"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm md:text-base"
+                className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm md:text-base"
               >
                 GDPR-förfrågningar
               </a>
               <span className="hidden sm:block text-gray-600">•</span>
               <a
                 href="tel:036712300"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm md:text-base"
+                className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm md:text-base"
               >
                 Kundservice
               </a>

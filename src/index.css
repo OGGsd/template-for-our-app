@@ -4,6 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color Variables */
+:root {
+  --ast-global-color-0: #99695a;  /* Primary accent color */
+  --ast-global-color-1: #b77a68;  /* Secondary accent color */
+  --ast-global-color-2: #6a736e;  /* Tertiary color */
+  --ast-global-color-3: #2F3B40;  /* Dark neutral */
+  --ast-global-color-4: #EDFBE2;  /* Light green background */
+  --ast-global-color-5: #FFFFFF;  /* White */
+  --ast-global-color-6: #D5EAD8;  /* Soft pastel green */
+  --ast-global-color-7: #99695a;  /* Same as color-0 */
+  --ast-global-color-8: #99695a;  /* Legacy/duplicate */
+  --ast-border-color: var(--ast-global-color-6);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +31,7 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: var(--ast-global-color-3);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -50,16 +64,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--ast-global-color-6);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--ast-global-color-0);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--ast-global-color-1);
 }
 
 /* Hide scrollbar for horizontal scroll */
@@ -93,18 +107,18 @@ body {
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .text-gray-600 {
-    @apply text-gray-800;
+    color: var(--ast-global-color-2);
   }
   
   .text-gray-400 {
-    @apply text-gray-600;
+    color: var(--ast-global-color-2);
   }
 }
 
 /* Focus styles for accessibility */
 button:focus,
 a:focus {
-  outline: 2px solid #f59e0b;
+  outline: 2px solid var(--ast-global-color-0);
   outline-offset: 2px;
 }
 
@@ -136,11 +150,32 @@ a:focus {
 
 /* Custom button styles */
 .btn-primary {
-  @apply bg-amber-500 hover:bg-amber-600 text-black font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105;
+  background-color: var(--ast-global-color-0);
+  color: var(--ast-global-color-5);
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.btn-primary:hover {
+  background-color: var(--ast-global-color-1);
+  transform: scale(1.05);
 }
 
 .btn-secondary {
-  @apply border-2 border-white text-white hover:bg-white hover:text-black font-semibold py-3 px-6 rounded-full transition-all duration-300;
+  border: 2px solid var(--ast-global-color-5);
+  color: var(--ast-global-color-5);
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--ast-global-color-5);
+  color: var(--ast-global-color-3);
 }
 
 /* Video background optimization */
@@ -202,8 +237,8 @@ img {
   bottom: 20px;
   left: 20px;
   right: 20px;
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: black;
+  background: linear-gradient(135deg, var(--ast-global-color-0), var(--ast-global-color-1));
+  color: var(--ast-global-color-5);
   padding: 16px;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -238,7 +273,7 @@ img {
 
 /* Loading states */
 .loading-skeleton {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background: linear-gradient(90deg, var(--ast-global-color-6) 25%, var(--ast-global-color-4) 50%, var(--ast-global-color-6) 75%);
   background-size: 200% 100%;
   animation: loading 1.5s infinite;
 }
@@ -255,7 +290,7 @@ img {
 /* Critical CSS for above-the-fold content */
 .hero-section {
   min-height: 100vh;
-  background: #000;
+  background: var(--ast-global-color-3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -263,7 +298,7 @@ img {
 
 .hero-content {
   text-align: center;
-  color: white;
+  color: var(--ast-global-color-5);
   max-width: 800px;
   padding: 0 20px;
 }
@@ -272,4 +307,65 @@ img {
 .pwa-elements {
   position: relative;
   z-index: 10000;
+}
+
+/* Custom utility classes for new color scheme */
+.bg-primary {
+  background-color: var(--ast-global-color-0);
+}
+
+.bg-secondary {
+  background-color: var(--ast-global-color-1);
+}
+
+.bg-tertiary {
+  background-color: var(--ast-global-color-2);
+}
+
+.bg-dark {
+  background-color: var(--ast-global-color-3);
+}
+
+.bg-light-green {
+  background-color: var(--ast-global-color-4);
+}
+
+.bg-soft-green {
+  background-color: var(--ast-global-color-6);
+}
+
+.text-primary {
+  color: var(--ast-global-color-0);
+}
+
+.text-secondary {
+  color: var(--ast-global-color-1);
+}
+
+.text-tertiary {
+  color: var(--ast-global-color-2);
+}
+
+.text-dark {
+  color: var(--ast-global-color-3);
+}
+
+.border-soft-green {
+  border-color: var(--ast-global-color-6);
+}
+
+.hover\:bg-primary:hover {
+  background-color: var(--ast-global-color-0);
+}
+
+.hover\:bg-secondary:hover {
+  background-color: var(--ast-global-color-1);
+}
+
+.hover\:text-primary:hover {
+  color: var(--ast-global-color-0);
+}
+
+.hover\:text-secondary:hover {
+  color: var(--ast-global-color-1);
 }

@@ -2,13 +2,13 @@ import { Award, Clock, Users, Scissors } from 'lucide-react';
 
 const AboutUs = () => {
   return (
-    <section id="om-oss" className="py-16 md:py-20 bg-gray-50 pb-20 lg:pb-16">
+    <section id="om-oss" className="py-16 md:py-20 bg-light-green pb-20 lg:pb-16">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12 md:mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-4 md:mb-6">
             Om KLIPPCENTER | JKPG
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-lg md:text-xl text-tertiary max-w-3xl mx-auto leading-relaxed px-4">
             En frisör mitt i Jönköping. Vi är din professionella frisörsalong på Barnarpsgatan 3 
             som erbjuder kvalitativa frisörtjänster för hela familjen.
           </p>
@@ -19,35 +19,35 @@ const AboutUs = () => {
           {/* Content Section - Left side on all devices */}
           <div className="order-1 space-y-6 md:space-y-8">
             <div className="text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Vår Filosofi</h2>
-              <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+              <h2 className="text-2xl md:text-3xl font-bold text-dark mb-4 md:mb-6">Vår Filosofi</h2>
+              <p className="text-tertiary mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                 På KLIPPCENTER | JKPG tror vi på att varje kund förtjänar en personlig och 
                 professionell upplevelse. Vi kombinerar modern teknik med klassiskt hantverk 
                 för att skapa den perfekta looken för dig.
               </p>
-              <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
+              <p className="text-tertiary leading-relaxed text-sm md:text-base mb-6">
                 Vårt team består av erfarna frisörer som kontinuerligt utvecklar sina färdigheter 
                 för att hålla sig uppdaterade med de senaste trenderna och teknikerna inom branschen.
               </p>
             </div>
             
             {/* Stats Section */}
-            <div className="bg-black rounded-2xl p-6 md:p-8 text-white shadow-xl">
+            <div className="bg-dark rounded-2xl p-6 md:p-8 text-white shadow-xl">
               <div className="grid grid-cols-2 gap-4 md:gap-6">
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-2">10+</div>
+                  <div className="text-2xl md:text-3xl font-bold text-primary mb-2">10+</div>
                   <div className="text-sm md:text-base">År av Erfarenhet</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-2">5000+</div>
+                  <div className="text-2xl md:text-3xl font-bold text-primary mb-2">5000+</div>
                   <div className="text-sm md:text-base">Nöjda Kunder</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-2">100%</div>
+                  <div className="text-2xl md:text-3xl font-bold text-primary mb-2">100%</div>
                   <div className="text-sm md:text-base">Kvalitetsgaranti</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-2">24/7</div>
+                  <div className="text-2xl md:text-3xl font-bold text-primary mb-2">24/7</div>
                   <div className="text-sm md:text-base">Online Bokning</div>
                 </div>
               </div>
@@ -74,36 +74,36 @@ const AboutUs = () => {
 
         {/* Values Section - Optimized for All Devices */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          <div className="text-center group bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-            <div className="bg-blue-50 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-blue-100 transition-colors duration-300">
-              <Award className="w-6 h-6 md:w-8 md:h-8 text-blue-500" />
+          <div className="text-center group bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-soft-green">
+            <div className="bg-soft-green rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-light-green transition-colors duration-300">
+              <Award className="w-6 h-6 md:w-8 md:h-8 text-primary" />
             </div>
-            <h3 className="text-sm md:text-lg font-semibold text-gray-900 mb-2">Kvalitet</h3>
-            <p className="text-gray-600 text-xs md:text-sm leading-relaxed">Högsta standard på alla våra tjänster</p>
+            <h3 className="text-sm md:text-lg font-semibold text-dark mb-2">Kvalitet</h3>
+            <p className="text-tertiary text-xs md:text-sm leading-relaxed">Högsta standard på alla våra tjänster</p>
           </div>
           
-          <div className="text-center group bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-            <div className="bg-blue-50 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-blue-100 transition-colors duration-300">
-              <Clock className="w-6 h-6 md:w-8 md:h-8 text-blue-500" />
+          <div className="text-center group bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-soft-green">
+            <div className="bg-soft-green rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-light-green transition-colors duration-300">
+              <Clock className="w-6 h-6 md:w-8 md:h-8 text-primary" />
             </div>
-            <h3 className="text-sm md:text-lg font-semibold text-gray-900 mb-2">Punktlighet</h3>
-            <p className="text-gray-600 text-xs md:text-sm leading-relaxed">Vi respekterar din tid och håller våra tider</p>
+            <h3 className="text-sm md:text-lg font-semibold text-dark mb-2">Punktlighet</h3>
+            <p className="text-tertiary text-xs md:text-sm leading-relaxed">Vi respekterar din tid och håller våra tider</p>
           </div>
           
-          <div className="text-center group bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-            <div className="bg-blue-50 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-blue-100 transition-colors duration-300">
-              <Users className="w-6 h-6 md:w-8 md:h-8 text-blue-500" />
+          <div className="text-center group bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-soft-green">
+            <div className="bg-soft-green rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-light-green transition-colors duration-300">
+              <Users className="w-6 h-6 md:w-8 md:h-8 text-primary" />
             </div>
-            <h3 className="text-sm md:text-lg font-semibold text-gray-900 mb-2">Service</h3>
-            <p className="text-gray-600 text-xs md:text-sm leading-relaxed">Personlig service anpassad efter dina behov</p>
+            <h3 className="text-sm md:text-lg font-semibold text-dark mb-2">Service</h3>
+            <p className="text-tertiary text-xs md:text-sm leading-relaxed">Personlig service anpassad efter dina behov</p>
           </div>
           
-          <div className="text-center group bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-            <div className="bg-blue-50 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-blue-100 transition-colors duration-300">
-              <Scissors className="w-6 h-6 md:w-8 md:h-8 text-blue-500" />
+          <div className="text-center group bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-soft-green">
+            <div className="bg-soft-green rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-light-green transition-colors duration-300">
+              <Scissors className="w-6 h-6 md:w-8 md:h-8 text-primary" />
             </div>
-            <h3 className="text-sm md:text-lg font-semibold text-gray-900 mb-2">Expertis</h3>
-            <p className="text-gray-600 text-xs md:text-sm leading-relaxed">Erfarna frisörer med passion för sitt yrke</p>
+            <h3 className="text-sm md:text-lg font-semibold text-dark mb-2">Expertis</h3>
+            <p className="text-tertiary text-xs md:text-sm leading-relaxed">Erfarna frisörer med passion för sitt yrke</p>
           </div>
         </div>
       </div>
