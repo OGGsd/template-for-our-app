@@ -169,13 +169,10 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-12 md:py-16 max-w-7xl">
           {/* Main Footer Content - Centered Layout */}
           <div className="text-center mb-12">
-            {/* Brand Section */}
-            <div className="flex items-center justify-center space-x-3 mb-6">
-              <img src="/Logo.jpg" alt="KLIPPCENTER | JKPG logotyp" className="w-12 h-12 md:w-16 md:h-16 rounded-lg" />
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold">KLIPPCENTER | JKPG</h2>
-                <p className="text-gray-400 text-sm">En frisör mitt i Jönköping</p>
-              </div>
+            {/* Brand Section - Removed Logo */}
+            <div className="mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold">KLIPPCENTER | JKPG</h2>
+              <p className="text-gray-400 text-sm">En frisör mitt i Jönköping</p>
             </div>
             
             <p className="text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto text-sm md:text-base">
@@ -230,10 +227,10 @@ const Footer = () => {
                 </li>
                 <li>
                   <button 
-                    onClick={() => scrollToSection('tjanster')}
+                    onClick={() => scrollToSection('behandlingar')}
                     className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm md:text-base"
                   >
-                    Tjänster
+                    Behandlingar
                   </button>
                 </li>
                 <li>
@@ -303,7 +300,7 @@ const Footer = () => {
           <div className="border-t border-gray-800 mt-8 md:mt-12 pt-6 md:pt-8 text-center">
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button 
-                onClick={() => scrollToSection('tjanster')}
+                onClick={() => scrollToSection('behandlingar')}
                 className="bg-primary hover:bg-secondary text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center"
               >
                 <Scissors className="w-4 h-4 md:w-5 md:h-5 mr-2" />

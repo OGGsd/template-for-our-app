@@ -14,56 +14,58 @@ const AboutUs = () => {
           </p>
         </div>
 
-        {/* Main Story Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center mb-16">
-          {/* Content */}
-          <div className="order-2 lg:order-1">
-            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-soft-green">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
-                  <Heart className="w-6 h-6 text-white" />
+        {/* Enhanced Two-Box Layout - Always Side by Side */}
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
+            {/* Content Box - Left Side */}
+            <div className="flex-1 min-w-0">
+              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-soft-green h-full">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                    <Heart className="w-6 h-6 text-white" />
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-dark">Vår Historia</h2>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-dark">Vår Historia</h2>
-              </div>
-              
-              <div className="space-y-4 text-tertiary leading-relaxed">
-                <p className="text-base md:text-lg">
-                  <strong className="text-primary">1996</strong> öppnades dörrarna till Klippcenter när 
-                  <strong className="text-dark"> Lotta</strong> startade salongen. Vi började i en mindre lokal 
-                  men nu, snart <strong className="text-primary">30 år senare</strong>, är vi flera frisörer 
-                  och en hudterapeut som tillsammans delar på vår stora fina lokal på väster.
-                </p>
                 
-                <p className="text-base md:text-lg">
-                  Vi är ett <strong className="text-dark">gott gäng</strong> på salongen som har väldigt roligt tillsammans. 
-                  Idag har vi ett <strong className="text-primary">helhetskoncept</strong> med bland annat kläder, 
-                  smycken, accessoarer, hudvård och makeup.
-                </p>
-                
-                <div className="bg-soft-green rounded-xl p-4 mt-6">
-                  <p className="text-sm md:text-base text-dark font-medium italic">
-                    "Vi brinner för att göra dig fin och känna dig välmående. 
-                    Varje kund är unik och förtjänar vår fulla uppmärksamhet."
+                <div className="space-y-4 text-tertiary leading-relaxed">
+                  <p className="text-base md:text-lg">
+                    <strong className="text-primary">1996</strong> öppnades dörrarna till Klippcenter när 
+                    <strong className="text-dark"> Lotta</strong> startade salongen. Vi började i en mindre lokal 
+                    men nu, snart <strong className="text-primary">30 år senare</strong>, är vi flera frisörer 
+                    och en hudterapeut som tillsammans delar på vår stora fina lokal på väster.
                   </p>
-                  <p className="text-sm text-tertiary mt-2">- Lotta, Grundare</p>
+                  
+                  <p className="text-base md:text-lg">
+                    Vi är ett <strong className="text-dark">gott gäng</strong> på salongen som har väldigt roligt tillsammans. 
+                    Idag har vi ett <strong className="text-primary">helhetskoncept</strong> med bland annat kläder, 
+                    smycken, accessoarer, hudvård och makeup.
+                  </p>
+                  
+                  <div className="bg-soft-green rounded-xl p-4 mt-6">
+                    <p className="text-sm md:text-base text-dark font-medium italic">
+                      "Vi brinner för att göra dig fin och känna dig välmående. 
+                      Varje kund är unik och förtjänar vår fulla uppmärksamhet."
+                    </p>
+                    <p className="text-sm text-tertiary mt-2">- Lotta, Grundare</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Image */}
-          <div className="order-1 lg:order-2">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="KLIPPCENTER | JKPG - Vår vackra salong på Väster i Jönköping"
-                className="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <p className="text-sm md:text-base font-semibold">Vår salong på Väster</p>
-                <p className="text-xs md:text-sm text-gray-200">Barnarpsgatan 3, Jönköping</p>
+            {/* Image Box - Right Side */}
+            <div className="flex-1 min-w-0">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[300px] lg:min-h-[400px]">
+                <img
+                  src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="KLIPPCENTER | JKPG - Vår vackra salong på Väster i Jönköping"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <p className="text-sm md:text-base font-semibold">Vår salong på Väster</p>
+                  <p className="text-xs md:text-sm text-gray-200">Barnarpsgatan 3, Jönköping</p>
+                </div>
               </div>
             </div>
           </div>

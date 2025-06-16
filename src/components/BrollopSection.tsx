@@ -26,107 +26,111 @@ const BrollopSection = () => {
           </p>
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-16">
-          {/* Services */}
-          <div className="space-y-6">
-            <div className="bg-soft-green rounded-2xl p-6 md:p-8 border border-soft-green">
-              <h2 className="text-2xl md:text-3xl font-bold text-dark mb-6 flex items-center">
-                <Crown className="w-8 h-8 text-primary mr-3" />
-                Våra Tjänster
-              </h2>
-              
-              <div className="space-y-6">
-                <div className="bg-white rounded-xl p-4 md:p-6">
-                  <h3 className="text-lg font-bold text-dark mb-3 flex items-center">
-                    <Sparkles className="w-5 h-5 text-primary mr-2" />
-                    För Bruden
-                  </h3>
-                  <ul className="space-y-2 text-tertiary">
-                    <li>• Bruduppsättning</li>
-                    <li>• Professionell makeup</li>
-                    <li>• Styling av tärnor</li>
-                    <li>• Provuppsättning innan bröllopet</li>
-                  </ul>
-                  <div className="mt-4 p-3 bg-primary/10 rounded-lg">
-                    <p className="text-primary font-bold text-lg">Brudklädsel: 4000:- inkl. makeup</p>
+        {/* Enhanced Two-Box Layout - Always Side by Side */}
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
+            {/* Services Box - Left Side */}
+            <div className="flex-1 min-w-0">
+              <div className="bg-soft-green rounded-2xl p-6 md:p-8 border border-soft-green h-full">
+                <h2 className="text-2xl md:text-3xl font-bold text-dark mb-6 flex items-center">
+                  <Crown className="w-8 h-8 text-primary mr-3" />
+                  Våra Tjänster
+                </h2>
+                
+                <div className="space-y-6">
+                  <div className="bg-white rounded-xl p-4 md:p-6">
+                    <h3 className="text-lg font-bold text-dark mb-3 flex items-center">
+                      <Sparkles className="w-5 h-5 text-primary mr-2" />
+                      För Bruden
+                    </h3>
+                    <ul className="space-y-2 text-tertiary">
+                      <li>• Bruduppsättning</li>
+                      <li>• Professionell makeup</li>
+                      <li>• Styling av tärnor</li>
+                      <li>• Provuppsättning innan bröllopet</li>
+                    </ul>
+                    <div className="mt-4 p-3 bg-primary/10 rounded-lg">
+                      <p className="text-primary font-bold text-lg">Brudklädsel: 4000 kr inkl. makeup</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="bg-white rounded-xl p-4 md:p-6">
-                  <h3 className="text-lg font-bold text-dark mb-3 flex items-center">
-                    <Users className="w-5 h-5 text-primary mr-2" />
-                    För Brudgummen & Best Men
-                  </h3>
-                  <ul className="space-y-2 text-tertiary">
-                    <li>• Professionell herrklippning</li>
-                    <li>• Styling för brudgummen</li>
-                    <li>• Styling för best men</li>
-                    <li>• Skäggvård och trimning</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Process & Experience */}
-          <div className="space-y-6">
-            <div className="bg-light-green rounded-2xl p-6 md:p-8 border border-soft-green">
-              <h2 className="text-2xl md:text-3xl font-bold text-dark mb-6 flex items-center">
-                <Calendar className="w-8 h-8 text-primary mr-3" />
-                Så Här Går Det Till
-              </h2>
-              
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-dark mb-1">Konsultation</h3>
-                    <p className="text-tertiary text-sm">Vi bokar in en konsultation där vi går igenom hur du vill ha frisyren och sminket, kollar på inspirationsbilder och gör en provuppsättning.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-dark mb-1">Bröllopsdagen</h3>
-                    <p className="text-tertiary text-sm">På bröllopsdagen är ni välkomna till oss på salongen där vi bjuder dig och ditt sällskap på frukost från Napoleon, dricka och annat tilltugg.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-dark mb-1">Perfekt Resultat</h3>
-                    <p className="text-tertiary text-sm">Vi ser till att du ser fantastisk ut på din stora dag med professionell styling och makeup som håller hela dagen.</p>
+                  <div className="bg-white rounded-xl p-4 md:p-6">
+                    <h3 className="text-lg font-bold text-dark mb-3 flex items-center">
+                      <Users className="w-5 h-5 text-primary mr-2" />
+                      För Brudgummen & Best Men
+                    </h3>
+                    <ul className="space-y-2 text-tertiary">
+                      <li>• Professionell herrklippning</li>
+                      <li>• Styling för brudgummen</li>
+                      <li>• Styling för best men</li>
+                      <li>• Skäggvård och trimning</li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Special Experience */}
-            <div className="bg-white rounded-2xl p-6 md:p-8 border border-soft-green shadow-lg">
-              <h3 className="text-xl font-bold text-dark mb-4 flex items-center">
-                <Camera className="w-6 h-6 text-primary mr-2" />
-                Speciell Upplevelse
-              </h3>
-              <p className="text-tertiary leading-relaxed mb-4">
-                Vi skapar en avslappnad och lyxig atmosfär på bröllopsdagen. Njut av vår gästvänliga service 
-                medan vi förbereder dig för den stora dagen.
-              </p>
-              <div className="bg-soft-green rounded-lg p-4">
-                <p className="text-sm text-dark font-medium">
-                  ✨ Frukost från Napoleon<br/>
-                  ✨ Drycker och tilltugg<br/>
-                  ✨ Avslappnad atmosfär<br/>
-                  ✨ Professionell service
-                </p>
+            {/* Process & Experience Box - Right Side */}
+            <div className="flex-1 min-w-0">
+              <div className="space-y-6 h-full">
+                <div className="bg-light-green rounded-2xl p-6 md:p-8 border border-soft-green flex-1">
+                  <h2 className="text-2xl md:text-3xl font-bold text-dark mb-6 flex items-center">
+                    <Calendar className="w-8 h-8 text-primary mr-3" />
+                    Så Här Går Det Till
+                  </h2>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start">
+                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">
+                        1
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-dark mb-1">Konsultation</h3>
+                        <p className="text-tertiary text-sm">Vi bokar in en konsultation där vi går igenom hur du vill ha frisyren och sminket, kollar på inspirationsbilder och gör en provuppsättning.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start">
+                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">
+                        2
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-dark mb-1">Bröllopsdagen</h3>
+                        <p className="text-tertiary text-sm">På bröllopsdagen är ni välkomna till oss på salongen där vi bjuder dig och ditt sällskap på frukost från Napoleon, dricka och annat tilltugg.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start">
+                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">
+                        3
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-dark mb-1">Perfekt Resultat</h3>
+                        <p className="text-tertiary text-sm">Vi ser till att du ser fantastisk ut på din stora dag med professionell styling och makeup som håller hela dagen.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Special Experience */}
+                <div className="bg-white rounded-2xl p-6 md:p-8 border border-soft-green shadow-lg">
+                  <h3 className="text-xl font-bold text-dark mb-4 flex items-center">
+                    <Camera className="w-6 h-6 text-primary mr-2" />
+                    Speciell Upplevelse
+                  </h3>
+                  <p className="text-tertiary leading-relaxed mb-4">
+                    Vi skapar en avslappnad och lyxig atmosfär på bröllopsdagen. Njut av vår gästvänliga service 
+                    medan vi förbereder dig för den stora dagen.
+                  </p>
+                  <div className="bg-soft-green rounded-lg p-4">
+                    <p className="text-sm text-dark font-medium">
+                      ✨ Frukost från Napoleon<br/>
+                      ✨ Drycker och tilltugg<br/>
+                      ✨ Avslappnad atmosfär<br/>
+                      ✨ Professionell service
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

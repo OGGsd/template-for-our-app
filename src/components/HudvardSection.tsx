@@ -22,83 +22,85 @@ const HudvardSection = () => {
           </p>
         </div>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center mb-16">
-          {/* Content */}
-          <div className="order-2 lg:order-1">
-            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-soft-green">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
-                  <Heart className="w-6 h-6 text-white" />
+        {/* Enhanced Two-Box Layout - Always Side by Side */}
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
+            {/* Content Box - Left Side */}
+            <div className="flex-1 min-w-0">
+              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-soft-green h-full">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                    <Heart className="w-6 h-6 text-white" />
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-dark">Skin & Care by Amanda</h2>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-dark">Skin & Care by Amanda</h2>
-              </div>
-              
-              <div className="space-y-6">
-                <p className="text-base md:text-lg text-tertiary leading-relaxed">
-                  Hos <strong className="text-dark">Amanda</strong> blir du alltid omhändertagen, 
-                  hon hjälper dig att hitta vad just du och din hud behöver.
-                </p>
                 
-                <div className="bg-soft-green rounded-xl p-6">
-                  <h3 className="text-lg font-bold text-dark mb-4 flex items-center">
-                    <Award className="w-5 h-5 text-primary mr-2" />
-                    Amanda - Hudterapeut sedan 2007
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center">
-                      <Star className="w-4 h-4 text-primary mr-2" />
-                      <span className="text-tertiary"><strong>Grym på:</strong> Avancerad hudvård</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Heart className="w-4 h-4 text-primary mr-2" />
-                      <span className="text-tertiary"><strong>Favoritbehandling:</strong> Jobba med maskiner</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Sparkles className="w-4 h-4 text-primary mr-2" />
-                      <span className="text-tertiary"><strong>Specialitet:</strong> Personlig hudvård</span>
+                <div className="space-y-6">
+                  <p className="text-base md:text-lg text-tertiary leading-relaxed">
+                    Hos <strong className="text-dark">Amanda</strong> blir du alltid omhändertagen, 
+                    hon hjälper dig att hitta vad just du och din hud behöver.
+                  </p>
+                  
+                  <div className="bg-soft-green rounded-xl p-6">
+                    <h3 className="text-lg font-bold text-dark mb-4 flex items-center">
+                      <Award className="w-5 h-5 text-primary mr-2" />
+                      Amanda - Hudterapeut sedan 2007
+                    </h3>
+                    <div className="space-y-3">
+                      <div className="flex items-center">
+                        <Star className="w-4 h-4 text-primary mr-2" />
+                        <span className="text-tertiary"><strong>Grym på:</strong> Avancerad hudvård</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Heart className="w-4 h-4 text-primary mr-2" />
+                        <span className="text-tertiary"><strong>Favoritbehandling:</strong> Jobba med maskiner</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Sparkles className="w-4 h-4 text-primary mr-2" />
+                        <span className="text-tertiary"><strong>Specialitet:</strong> Personlig hudvård</span>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="bg-primary/10 rounded-xl p-6 border border-primary/20">
-                  <h4 className="text-lg font-bold text-dark mb-3">Varför välja Amanda?</h4>
-                  <ul className="space-y-2 text-tertiary">
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>Över 15 års erfarenhet inom hudvård</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>Personlig och omhändertagande service</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>Avancerade behandlingar med moderna maskiner</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>Skräddarsydda behandlingar för din hudtyp</span>
-                    </li>
-                  </ul>
+                  <div className="bg-primary/10 rounded-xl p-6 border border-primary/20">
+                    <h4 className="text-lg font-bold text-dark mb-3">Varför välja Amanda?</h4>
+                    <ul className="space-y-2 text-tertiary">
+                      <li className="flex items-start">
+                        <span className="text-primary mr-2">•</span>
+                        <span>Över 15 års erfarenhet inom hudvård</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-primary mr-2">•</span>
+                        <span>Personlig och omhändertagande service</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-primary mr-2">•</span>
+                        <span>Avancerade behandlingar med moderna maskiner</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-primary mr-2">•</span>
+                        <span>Skräddarsydda behandlingar för din hudtyp</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Image */}
-          <div className="order-1 lg:order-2">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.pexels.com/photos/3985360/pexels-photo-3985360.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Skin & Care by Amanda - Professionell hudvård i Jönköping"
-                className="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <p className="text-sm md:text-base font-semibold">Skin & Care by Amanda</p>
-                <p className="text-xs md:text-sm text-gray-200">Avancerad hudvård & behandlingar</p>
+            {/* Image Box - Right Side */}
+            <div className="flex-1 min-w-0">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[300px] lg:min-h-[400px]">
+                <img
+                  src="https://images.pexels.com/photos/3985360/pexels-photo-3985360.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Skin & Care by Amanda - Professionell hudvård i Jönköping"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <p className="text-sm md:text-base font-semibold">Skin & Care by Amanda</p>
+                  <p className="text-xs md:text-sm text-gray-200">Avancerad hudvård & behandlingar</p>
+                </div>
               </div>
             </div>
           </div>

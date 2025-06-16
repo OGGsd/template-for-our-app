@@ -294,7 +294,6 @@ const BehandlingarSection = () => {
                                   <span className="text-sm font-medium">{service.time}</span>
                                 </div>
                                 <div className="flex items-center text-primary">
-                                  <DollarSign className="w-4 h-4 mr-1" />
                                   <span className="text-lg font-bold">{service.price}</span>
                                 </div>
                               </div>
