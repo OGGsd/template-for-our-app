@@ -59,7 +59,7 @@ nav, .logo, .brand {
   user-select: none;
 }
 
-/* Full width container override */
+/* CRITICAL: 98% Screen Usage - Remove ALL containers and padding */
 .container {
   width: 100% !important;
   max-width: 100% !important;
@@ -69,10 +69,30 @@ nav, .logo, .brand {
 
 /* Remove all horizontal padding and margins */
 section {
-  width: 100%;
-  margin: 0;
-  padding-left: 0;
-  padding-right: 0;
+  width: 100% !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Force full width on all elements */
+.w-full {
+  width: 100% !important;
+}
+
+.max-w-7xl,
+.max-w-6xl,
+.max-w-5xl,
+.max-w-4xl,
+.max-w-3xl,
+.max-w-2xl,
+.max-w-xl,
+.max-w-lg,
+.max-w-md,
+.max-w-sm {
+  max-width: 98% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* PWA specific optimizations */
@@ -196,6 +216,15 @@ select:focus {
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .fade-in-up {
   animation: fadeInUp 0.8s ease-out;
 }
@@ -258,7 +287,7 @@ select:focus {
   animation: shimmer 1.5s infinite;
 }
 
-/* Mobile optimizations */
+/* Mobile optimizations - 98% usage */
 @media (max-width: 768px) {
   /* Touch targets */
   button, a {
@@ -270,21 +299,40 @@ select:focus {
   * {
     -webkit-overflow-scrolling: touch;
   }
-}
-
-/* Tablet optimizations */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  
+  /* Force 98% width on mobile */
+  .container,
+  section,
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl,
+  .max-w-4xl {
+    width: 98% !important;
+    max-width: 98% !important;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
   }
 }
 
-/* Desktop optimizations */
+/* Tablet optimizations - 98% usage */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container,
+  section {
+    width: 98% !important;
+    max-width: 98% !important;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+  }
+}
+
+/* Desktop optimizations - 98% usage */
 @media (min-width: 1024px) {
-  .container {
-    padding-left: 3rem;
-    padding-right: 3rem;
+  .container,
+  section {
+    width: 98% !important;
+    max-width: 98% !important;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
   }
 }
 
@@ -399,4 +447,19 @@ select:focus {
     background: red;
     z-index: 9999;
   }
+}
+
+/* Force full width utility */
+.full-width {
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+}
+
+/* 98% width utility */
+.width-98 {
+  width: 98% !important;
+  max-width: 98% !important;
+  margin-left: 1% !important;
+  margin-right: 1% !important;
 }
