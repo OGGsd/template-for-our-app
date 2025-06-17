@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import path from 'path';
 
 export default defineConfig({
   plugins: [
@@ -8,15 +9,15 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,mp4,jpg,jpeg}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,mp4,jpg,jpeg,webp}'],
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/fvega0dwq1jnr8l4\.public\.blob\.vercel-storage\.com\/.*/i,
+            urlPattern: /^https:\/\/mnep11uygvxnyj6a\.public\.blob\.vercel-storage\.com\/.*/i,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'video-cache',
+              cacheName: 'images-cache',
               expiration: {
-                maxEntries: 10,
+                maxEntries: 100,
                 maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
               }
             }
@@ -25,7 +26,7 @@ export default defineConfig({
             urlPattern: /^https:\/\/images\.pexels\.com\/.*/i,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'images-cache',
+              cacheName: 'external-images-cache',
               expiration: {
                 maxEntries: 50,
                 maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
@@ -49,54 +50,72 @@ export default defineConfig({
                 maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
               }
             }
-          },
-          {
-            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'images',
-              expiration: {
-                maxEntries: 100,
-                maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
-              }
-            }
           }
         ],
         skipWaiting: true,
         clientsClaim: true
       },
-      includeAssets: ['logo.png', 'favicon.ico', 'About Us Image.jpg', 'browserconfig.xml'],
-      manifest: false, // We're using our custom manifest.json
+      includeAssets: ['Logo.jpg', 'favicon.ico', 'Hero Section Background.jpg', 'browserconfig.xml'],
+      manifest: false, // Using custom manifest.json
       devOptions: {
         enabled: true,
         type: 'module'
       }
     })
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   optimizeDeps: {
     exclude: ['lucide-react'],
+    include: ['framer-motion', 'react-intersection-observer']
   },
   build: {
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
+          motion: ['framer-motion'],
+          ui: ['@radix-ui/react-slot', '@radix-ui/react-dialog'],
           icons: ['lucide-react']
         }
       }
     },
-    target: 'es2015',
+    target: 'es2020',
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn']
+      },
+      mangle: {
+        safari10: true
+      },
+      format: {
+        comments: false
       }
-    }
+    },
+    sourcemap: false,
+    reportCompressedSize: false
   },
   server: {
     headers: {
-      'Service-Worker-Allowed': '/'
+      'Service-Worker-Allowed': '/',
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'X-XSS-Protection': '1; mode=block',
+      'Referrer-Policy': 'strict-origin-when-cross-origin'
+    }
+  },
+  preview: {
+    headers: {
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'X-XSS-Protection': '1; mode=block',
+      'Referrer-Policy': 'strict-origin-when-cross-origin'
     }
   }
 });
