@@ -1,5 +1,5 @@
 import React from 'react';
-import EnhancedHeroSection from './components/EnhancedHeroSection';
+import HeroSection from './components/HeroSection';
 import AboutUs from './components/AboutUs';
 import FrisorTeamSection from './components/FrisorTeamSection';
 import BehandlingarSection from './components/BehandlingarSection';
@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="min-h-screen bg-white">
-      <EnhancedHeroSection />
+      <HeroSection />
       <AboutUs />
       <FrisorTeamSection />
       <BehandlingarSection />
