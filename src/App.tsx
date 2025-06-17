@@ -1,15 +1,5 @@
 import React, { useEffect } from 'react';
-import PremiumHeroSection from './components/premium/PremiumHeroSection';
-import PremiumAboutUs from './components/premium/PremiumAboutUs';
-import FrisorTeamSection from './components/FrisorTeamSection';
-import BehandlingarSection from './components/BehandlingarSection';
-import BrollopSection from './components/BrollopSection';
-import Gallery from './components/Gallery';
-import Reviews from './components/Reviews';
-import HudvardSection from './components/HudvardSection';
-import ProdukterSection from './components/ProdukterSection';
-import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
+import EnhancedHeroSection from './components/EnhancedHeroSection';
 
 function App() {
   useEffect(() => {
@@ -42,17 +32,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
-      <PremiumHeroSection />
-      <PremiumAboutUs />
-      <FrisorTeamSection />
-      <BehandlingarSection />
-      <BrollopSection />
-      <Gallery />
-      <Reviews />
-      <HudvardSection />
-      <ProdukterSection />
-      <ContactSection />
-      <Footer />
+      <EnhancedHeroSection />
     </div>
   );
 }
