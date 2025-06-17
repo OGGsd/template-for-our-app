@@ -22,7 +22,7 @@ const EnhancedHeroSection = () => {
       scrollToExpand="Scrolla för att utforska"
       textBlend={true}
     >
-      <div className="space-y-0">
+      <div className="w-full">
         <AboutUs />
         <FrisorTeamSection />
         <BehandlingarSection />

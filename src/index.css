@@ -26,6 +26,8 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -33,8 +35,25 @@ body {
   line-height: 1.6;
   color: var(--ast-global-color-3);
   overflow-x: hidden;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Full width container override */
+.container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove all horizontal padding and margins */
+section {
+  width: 100%;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* PWA specific optimizations */
@@ -194,11 +213,6 @@ img {
 
 /* Mobile optimizations */
 @media (max-width: 768px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
   /* Touch targets */
   button, a {
     min-height: 44px;
