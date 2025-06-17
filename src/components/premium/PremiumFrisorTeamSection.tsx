@@ -1,44 +1,16 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Star, Award, ChevronLeft, ChevronRight, Calendar, Sparkles, Users, Crown } from 'lucide-react';
+import { Star, Award, Calendar, Sparkles, Users, Crown } from 'lucide-react';
 import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
 
 const PremiumFrisorTeamSection = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 50) {
-      scrollContainerRef.current?.scrollBy({ left: 300, behavior: 'smooth' });
-    }
-    if (touchStart - touchEnd < -50) {
-      scrollContainerRef.current?.scrollBy({ left: -300, behavior: 'smooth' });
-    }
-  };
-
-  const scrollLeft = () => {
-    scrollContainerRef.current?.scrollBy({ left: -300, behavior: 'smooth' });
-  };
-
-  const scrollRight = () => {
-    scrollContainerRef.current?.scrollBy({ left: 300, behavior: 'smooth' });
-  };
 
   const teamMembers = [
     {
@@ -121,13 +93,13 @@ const PremiumFrisorTeamSection = () => {
         }} />
       </div>
 
-      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+      <div className="w-full px-2 sm:px-4 lg:px-6 max-w-[98%] mx-auto relative z-10">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <motion.div variants={itemVariants} className="mb-6">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full mb-6">
@@ -137,14 +109,14 @@ const PremiumFrisorTeamSection = () => {
           
           <motion.h1 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6 bg-gradient-to-r from-dark to-primary bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-4 md:mb-6 bg-gradient-to-r from-dark to-primary bg-clip-text text-transparent px-2"
           >
             Våra Frisörer
           </motion.h1>
           
           <motion.p 
             variants={itemVariants}
-            className="text-xl md:text-2xl text-tertiary max-w-4xl mx-auto leading-relaxed mb-8"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-tertiary max-w-4xl mx-auto leading-relaxed mb-6 md:mb-8 px-2 sm:px-4"
           >
             Idag är vi sex frisörer, en frisör under utbildning och en hudterapeut. 
             Vi älskar verkligen vårt yrke och brinner för att göra dig fin!
@@ -152,56 +124,32 @@ const PremiumFrisorTeamSection = () => {
           
           <motion.div 
             variants={itemVariants}
-            className="bg-gradient-to-r from-soft-green to-light-green rounded-2xl p-6 max-w-4xl mx-auto border border-primary/20"
+            className="bg-gradient-to-r from-soft-green to-light-green rounded-xl sm:rounded-2xl p-4 sm:p-6 max-w-4xl mx-auto border border-primary/20"
           >
-            <p className="text-lg text-tertiary leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-tertiary leading-relaxed px-2">
               För att hålla oss uppdaterade och kunna leverera det bästa till dig går vi 
               kontinuerligt på kurser och utbildningar.
             </p>
           </motion.div>
         </motion.div>
 
-        {/* Team Members Carousel */}
+        {/* Team Members Grid - NO SCROLLING ON MOBILE */}
         <motion.div 
-          variants={itemVariants}
-          className="relative mb-20"
+          variants={containerVariants}
+          className="mb-16 md:mb-20"
         >
-          {/* Navigation Buttons - Desktop */}
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={scrollLeft}
-            className="hidden md:flex absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white border-primary/20 shadow-lg"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </Button>
-          
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={scrollRight}
-            className="hidden md:flex absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white border-primary/20 shadow-lg"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </Button>
-
-          <div
-            ref={scrollContainerRef}
-            className="flex gap-8 overflow-x-auto pb-4 scrollbar-hide px-4 md:px-12"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
+          {/* Mobile: Stack vertically, Tablet+: Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
             {teamMembers.map((member, index) => (
               <motion.div 
                 key={index} 
-                className="flex-shrink-0 w-80 md:w-96 group"
+                variants={itemVariants}
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
+                className="group"
               >
                 <Card className="h-full bg-white border-0 shadow-xl hover:shadow-3xl transition-all duration-500 overflow-hidden">
-                  <div className="relative overflow-hidden aspect-[4/5]">
+                  <div className="relative overflow-hidden aspect-[3/4]">
                     <img
                       src={member.image}
                       alt={`${member.name} - ${member.role} på KLIPPCENTER | JKPG`}
@@ -211,60 +159,62 @@ const PremiumFrisorTeamSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {member.isFounder && (
-                      <div className="absolute top-4 left-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-full px-4 py-2 text-sm font-bold shadow-lg flex items-center">
-                        <Crown className="w-4 h-4 mr-1" />
-                        GRUNDARE
+                      <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-full px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-bold shadow-lg flex items-center">
+                        <Crown className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+                        <span className="hidden sm:inline">GRUNDARE</span>
+                        <span className="sm:hidden">GRUND</span>
                       </div>
                     )}
                     
                     {member.isSkinCare && (
-                      <div className="absolute top-4 left-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-full px-4 py-2 text-sm font-bold shadow-lg flex items-center">
-                        <Sparkles className="w-4 h-4 mr-1" />
-                        HUDVÅRD
+                      <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-full px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-bold shadow-lg flex items-center">
+                        <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+                        <span className="hidden sm:inline">HUDVÅRD</span>
+                        <span className="sm:hidden">HUD</span>
                       </div>
                     )}
                     
-                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-2 flex items-center shadow-lg">
-                      <Star className="w-4 h-4 text-primary fill-current mr-1" />
-                      <span className="text-sm font-semibold text-dark">Expert</span>
+                    <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white/90 backdrop-blur-sm rounded-full px-2 sm:px-3 py-1 sm:py-2 flex items-center shadow-lg">
+                      <Star className="w-3 h-3 sm:w-4 sm:h-4 text-primary fill-current mr-1" />
+                      <span className="text-xs sm:text-sm font-semibold text-dark">Expert</span>
                     </div>
                   </div>
                   
-                  <CardContent className="p-6">
-                    <div className="mb-4">
-                      <h2 className="text-2xl font-bold text-dark mb-1">{member.name}</h2>
-                      <p className="text-primary font-semibold text-lg">{member.role}</p>
+                  <CardContent className="p-3 sm:p-4 lg:p-6">
+                    <div className="mb-3 sm:mb-4">
+                      <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-dark mb-1 truncate">{member.name}</h2>
+                      <p className="text-primary font-semibold text-sm sm:text-base lg:text-lg truncate">{member.role}</p>
                     </div>
                     
-                    <div className="space-y-4 mb-6">
+                    <div className="space-y-2 sm:space-y-3 lg:space-y-4 mb-4 sm:mb-6">
                       <div className="flex items-start">
-                        <Award className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                        <div>
-                          <p className="font-semibold text-dark">Erfarenhet</p>
-                          <p className="text-tertiary">{member.experience}</p>
+                        <Award className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-primary mr-2 sm:mr-3 mt-1 flex-shrink-0" />
+                        <div className="min-w-0">
+                          <p className="font-semibold text-dark text-xs sm:text-sm">Erfarenhet</p>
+                          <p className="text-tertiary text-xs sm:text-sm break-words">{member.experience}</p>
                         </div>
                       </div>
                       
                       <div className="flex items-start">
-                        <Star className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                        <div>
-                          <p className="font-semibold text-dark">Grym på</p>
-                          <p className="text-tertiary">{member.specialty}</p>
+                        <Star className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-primary mr-2 sm:mr-3 mt-1 flex-shrink-0" />
+                        <div className="min-w-0">
+                          <p className="font-semibold text-dark text-xs sm:text-sm">Grym på</p>
+                          <p className="text-tertiary text-xs sm:text-sm break-words">{member.specialty}</p>
                         </div>
                       </div>
                       
                       <div className="flex items-start">
-                        <Calendar className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                        <div>
-                          <p className="font-semibold text-dark">Favoritfrisyr</p>
-                          <p className="text-tertiary">{member.favorite}</p>
+                        <Calendar className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-primary mr-2 sm:mr-3 mt-1 flex-shrink-0" />
+                        <div className="min-w-0">
+                          <p className="font-semibold text-dark text-xs sm:text-sm">Favoritfrisyr</p>
+                          <p className="text-tertiary text-xs sm:text-sm break-words">{member.favorite}</p>
                         </div>
                       </div>
                     </div>
                     
                     <Button 
                       variant="salon"
-                      className="w-full"
+                      className="w-full text-xs sm:text-sm"
                       onClick={() => document.getElementById('behandlingar')?.scrollIntoView({ behavior: 'smooth' })}
                     >
                       Boka med {member.name}
@@ -282,9 +232,9 @@ const PremiumFrisorTeamSection = () => {
           className="mb-12"
         >
           <Card className="bg-gradient-to-r from-dark to-gray-800 border-0 shadow-2xl">
-            <CardContent className="p-12 text-white text-center">
-              <h3 className="text-3xl font-bold mb-12">Vårt Expertteam</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <CardContent className="p-6 sm:p-8 md:p-12 text-white text-center">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8 sm:mb-12">Vårt Expertteam</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
                 {[
                   { number: "6", label: "Erfarna Frisörer", icon: Users },
                   { number: "1", label: "Hudterapeut", icon: Sparkles },
@@ -297,9 +247,9 @@ const PremiumFrisorTeamSection = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                    <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.number}</div>
-                    <div className="text-gray-300">{stat.label}</div>
+                    <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary mx-auto mb-2 sm:mb-3" />
+                    <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-1 sm:mb-2">{stat.number}</div>
+                    <div className="text-gray-300 text-xs sm:text-sm md:text-base">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -313,13 +263,13 @@ const PremiumFrisorTeamSection = () => {
           className="text-center"
         >
           <Card className="bg-gradient-to-br from-light-green to-soft-green border border-primary/20 shadow-xl">
-            <CardContent className="p-12">
-              <h3 className="text-3xl font-bold text-dark mb-4">Träffa Vårt Team</h3>
-              <p className="text-xl text-tertiary mb-8 max-w-2xl mx-auto">
+            <CardContent className="p-6 sm:p-8 md:p-12">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-dark mb-3 sm:mb-4">Träffa Vårt Team</h3>
+              <p className="text-base sm:text-lg md:text-xl text-tertiary mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
                 Varje medlem i vårt team bidrar med unik expertis och passion. 
                 Kom och upplev skillnaden som professionell service gör.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button 
                   variant="premium"
                   size="xl"

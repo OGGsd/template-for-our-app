@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ChevronDown, ChevronUp, Clock, DollarSign, Calendar, Scissors, Palette, Sparkles, X, ExternalLink, Star } from 'lucide-react';
+import { ChevronDown, ChevronUp, Clock, Calendar, Scissors, Palette, Sparkles, X, ExternalLink, Star } from 'lucide-react';
 import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
@@ -257,13 +257,13 @@ const PremiumBehandlingarSection = () => {
           }} />
         </div>
 
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="w-full px-2 sm:px-4 lg:px-6 max-w-[98%] mx-auto relative z-10">
           <motion.div
             ref={ref}
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
           >
             <motion.div variants={itemVariants} className="mb-6">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full mb-6">
@@ -273,14 +273,14 @@ const PremiumBehandlingarSection = () => {
             
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6 bg-gradient-to-r from-dark to-primary bg-clip-text text-transparent"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-4 md:mb-6 bg-gradient-to-r from-dark to-primary bg-clip-text text-transparent px-2"
             >
               Våra Behandlingar
             </motion.h1>
             
             <motion.p 
               variants={itemVariants}
-              className="text-xl md:text-2xl text-tertiary max-w-4xl mx-auto leading-relaxed mb-8"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-tertiary max-w-4xl mx-auto leading-relaxed mb-6 md:mb-8 px-2 sm:px-4"
             >
               Här ser du våra behandlingar, klicka och läs mer för att lättare välja den behandling 
               som passar dig bäst. Varje behandling har en tid och vi gör vårt bästa för att hålla den, 
@@ -303,7 +303,7 @@ const PremiumBehandlingarSection = () => {
           {/* Treatment Categories */}
           <motion.div 
             variants={containerVariants}
-            className="space-y-6 mb-16"
+            className="space-y-4 md:space-y-6 mb-12 md:mb-16"
           >
             {Object.entries(behandlingar).map(([key, category]) => {
               const IconComponent = category.icon;
@@ -318,26 +318,26 @@ const PremiumBehandlingarSection = () => {
                   <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl hover:shadow-3xl transition-all duration-500 overflow-hidden">
                     <button
                       onClick={() => toggleCategory(key)}
-                      className="w-full p-6 lg:p-8 flex items-center justify-between hover:bg-gradient-to-r hover:from-soft-green/50 hover:to-light-green/50 transition-all duration-300"
+                      className="w-full p-4 sm:p-6 lg:p-8 flex items-center justify-between hover:bg-gradient-to-r hover:from-soft-green/50 hover:to-light-green/50 transition-all duration-300"
                     >
-                      <div className="flex items-center">
+                      <div className="flex items-center min-w-0 flex-1">
                         <div className={cn(
-                          "bg-gradient-to-br rounded-full p-3 mr-4 shadow-lg",
+                          "bg-gradient-to-br rounded-full p-2 sm:p-3 mr-3 sm:mr-4 shadow-lg flex-shrink-0",
                           category.gradient
                         )}>
-                          <IconComponent className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
+                          <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-dark">{category.title}</h2>
+                        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-dark truncate">{category.title}</h2>
                       </div>
-                      <div className="flex items-center">
-                        <span className="text-sm lg:text-base text-tertiary mr-4 bg-soft-green px-3 py-1 rounded-full">
+                      <div className="flex items-center flex-shrink-0 ml-2">
+                        <span className="text-xs sm:text-sm lg:text-base text-tertiary mr-2 sm:mr-4 bg-soft-green px-2 sm:px-3 py-1 rounded-full whitespace-nowrap">
                           {category.services.length} behandlingar
                         </span>
                         <div className="p-2 rounded-full bg-primary/10">
                           {isExpanded ? (
-                            <ChevronUp className="w-6 h-6 text-primary" />
+                            <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                           ) : (
-                            <ChevronDown className="w-6 h-6 text-primary" />
+                            <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                           )}
                         </div>
                       </div>
@@ -353,31 +353,30 @@ const PremiumBehandlingarSection = () => {
                       className="overflow-hidden"
                     >
                       <div className="border-t border-soft-green">
-                        <div className="p-6 lg:p-8 space-y-6">
+                        <div className="p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6">
                           {category.services.map((service, index) => (
                             <motion.div
                               key={index}
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: isExpanded ? 1 : 0, y: isExpanded ? 0 : 20 }}
                               transition={{ delay: index * 0.1 }}
-                              className="bg-gradient-to-r from-soft-green to-light-green rounded-2xl p-6 hover:shadow-lg transition-all duration-300 border border-primary/10"
+                              className="bg-gradient-to-r from-soft-green to-light-green rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:shadow-lg transition-all duration-300 border border-primary/10"
                             >
-                              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
-                                <h3 className="text-lg lg:text-xl font-bold text-dark mb-2 lg:mb-0">{service.name}</h3>
-                                <div className="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-4">
-                                  <div className="flex items-center text-primary bg-white/80 rounded-full px-3 py-1">
-                                    <Clock className="w-4 h-4 mr-1" />
-                                    <span className="text-sm font-medium">{service.time}</span>
+                              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-3 sm:mb-4">
+                                <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-dark mb-2 lg:mb-0 break-words">{service.name}</h3>
+                                <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row lg:items-end xl:items-center gap-2 lg:gap-1 xl:gap-4 flex-shrink-0">
+                                  <div className="flex items-center text-primary bg-white/80 rounded-full px-2 sm:px-3 py-1">
+                                    <Clock className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+                                    <span className="text-xs sm:text-sm font-medium whitespace-nowrap">{service.time}</span>
                                   </div>
-                                  <div className="flex items-center text-primary bg-white/80 rounded-full px-3 py-1">
-                                    <DollarSign className="w-4 h-4 mr-1" />
-                                    <span className="text-lg font-bold">{service.price}</span>
+                                  <div className="flex items-center text-primary bg-white/80 rounded-full px-2 sm:px-3 py-1">
+                                    <span className="text-sm sm:text-base lg:text-lg font-bold whitespace-nowrap">{service.price}</span>
                                   </div>
                                 </div>
                               </div>
                               
                               {service.description && (
-                                <p className="text-tertiary leading-relaxed text-sm lg:text-base mb-4">
+                                <p className="text-tertiary leading-relaxed text-xs sm:text-sm lg:text-base mb-3 sm:mb-4 break-words">
                                   {service.description}
                                 </p>
                               )}
@@ -385,10 +384,10 @@ const PremiumBehandlingarSection = () => {
                               <Button
                                 variant="salon"
                                 onClick={openBookingModal}
-                                className="group"
+                                className="group w-full sm:w-auto"
                               >
-                                <Calendar className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
-                                Boka {service.name}
+                                <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-2 group-hover:rotate-12 transition-transform" />
+                                <span className="text-xs sm:text-sm">Boka {service.name}</span>
                               </Button>
                             </motion.div>
                           ))}
@@ -407,12 +406,12 @@ const PremiumBehandlingarSection = () => {
             className="text-center"
           >
             <Card className="bg-gradient-to-r from-dark to-gray-800 border-0 shadow-2xl">
-              <CardContent className="p-12 text-white">
-                <h3 className="text-3xl font-bold mb-4">Osäker på vilken behandling som passar dig?</h3>
-                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              <CardContent className="p-6 sm:p-8 md:p-12 text-white">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 px-2">Osäker på vilken behandling som passar dig?</h3>
+                <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
                   Kontakta oss så hjälper vi dig att hitta den perfekta behandlingen för ditt hår
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                   <Button
                     variant="premium"
                     size="xl"
@@ -440,10 +439,10 @@ const PremiumBehandlingarSection = () => {
       {isBookingModalOpen && (
         <div className="fixed inset-0 bg-black/95 flex items-center justify-center z-50">
           <div className="w-full h-full md:w-[95vw] md:h-[95vh] bg-white md:rounded-2xl flex flex-col shadow-3xl">
-            <div className="flex justify-between items-center p-4 border-b bg-gradient-to-r from-soft-green to-light-green md:rounded-t-2xl flex-shrink-0">
+            <div className="flex justify-between items-center p-3 sm:p-4 border-b bg-gradient-to-r from-soft-green to-light-green md:rounded-t-2xl flex-shrink-0">
               <div className="flex items-center">
-                <Calendar className="w-6 h-6 text-primary mr-3" />
-                <h3 className="text-xl font-bold text-dark">Boka Din Tid</h3>
+                <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-primary mr-2 sm:mr-3" />
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-dark">Boka Din Tid</h3>
               </div>
               <div className="flex items-center gap-2">
                 <Button
@@ -461,7 +460,7 @@ const PremiumBehandlingarSection = () => {
                   onClick={closeBookingModal}
                   className="hover:bg-gray-200"
                 >
-                  <X className="w-6 h-6" />
+                  <X className="w-5 h-5 sm:w-6 sm:h-6" />
                 </Button>
               </div>
             </div>
