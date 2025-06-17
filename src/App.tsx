@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import EnhancedHeroSection from './components/EnhancedHeroSection';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 
 function App() {
   useEffect(() => {
@@ -31,9 +33,14 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      <EnhancedHeroSection />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-white">
+        <Routes>
+          <Route path="/" element={<EnhancedHeroSection />} />
+          <Route path="/integritetspolicy" element={<PrivacyPolicyPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
