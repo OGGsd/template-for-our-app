@@ -6,10 +6,10 @@ import PremiumBehandlingarSection from './premium/PremiumBehandlingarSection';
 import PremiumBrollopSection from './premium/PremiumBrollopSection';
 import PremiumGallery from './premium/PremiumGallery';
 import PremiumReviews from './premium/PremiumReviews';
-import HudvardSection from './HudvardSection';
-import ProdukterSection from './ProdukterSection';
-import ContactSection from './ContactSection';
-import Footer from './Footer';
+import PremiumHudvardSection from './premium/PremiumHudvardSection';
+import PremiumProdukterSection from './premium/PremiumProdukterSection';
+import PremiumContactSection from './premium/PremiumContactSection';
+import PremiumFooter from './premium/PremiumFooter';
 
 const EnhancedHeroSection = () => {
   return (
@@ -21,10 +21,10 @@ const EnhancedHeroSection = () => {
       <PremiumBrollopSection />
       <PremiumGallery />
       <PremiumReviews />
-      <HudvardSection />
-      <ProdukterSection />
-      <ContactSection />
-      <Footer />
+      <PremiumHudvardSection />
+      <PremiumProdukterSection />
+      <PremiumContactSection />
+      <PremiumFooter />
     </div>
   );
 };

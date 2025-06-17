@@ -59,27 +59,22 @@ nav, .logo, .brand {
   user-select: none;
 }
 
-/* CRITICAL: 98% Screen Usage - Remove ALL containers and padding */
+/* CRITICAL: 98% Screen Usage - MAXIMUM UTILIZATION */
 .container {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  width: 98% !important;
+  max-width: 98% !important;
+  margin: 0 auto !important;
+  padding-left: 1% !important;
+  padding-right: 1% !important;
 }
 
-/* Remove all horizontal padding and margins */
+/* Force 98% width on ALL sections */
 section {
   width: 100% !important;
   margin: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
 }
 
-/* Force full width on all elements */
-.w-full {
-  width: 100% !important;
-}
-
+/* Override ALL max-width constraints */
 .max-w-7xl,
 .max-w-6xl,
 .max-w-5xl,
@@ -91,6 +86,22 @@ section {
 .max-w-md,
 .max-w-sm {
   max-width: 98% !important;
+  width: 98% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1% !important;
+  padding-right: 1% !important;
+}
+
+/* Force full width utilization */
+.w-full {
+  width: 100% !important;
+}
+
+/* Premium 98% width utility class */
+.max-w-\[98\%\] {
+  max-width: 98% !important;
+  width: 98% !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -306,7 +317,21 @@ select:focus {
   .max-w-7xl,
   .max-w-6xl,
   .max-w-5xl,
-  .max-w-4xl {
+  .max-w-4xl,
+  .max-w-3xl,
+  .max-w-2xl,
+  .max-w-xl,
+  .max-w-lg,
+  .max-w-md,
+  .max-w-sm {
+    width: 98% !important;
+    max-width: 98% !important;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+  }
+  
+  /* Mobile specific 98% utilization */
+  .max-w-\[98\%\] {
     width: 98% !important;
     max-width: 98% !important;
     padding-left: 1% !important;
@@ -317,7 +342,21 @@ select:focus {
 /* Tablet optimizations - 98% usage */
 @media (min-width: 768px) and (max-width: 1024px) {
   .container,
-  section {
+  section,
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl,
+  .max-w-4xl,
+  .max-w-3xl,
+  .max-w-2xl {
+    width: 98% !important;
+    max-width: 98% !important;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+  }
+  
+  /* Tablet specific 98% utilization */
+  .max-w-\[98\%\] {
     width: 98% !important;
     max-width: 98% !important;
     padding-left: 1% !important;
@@ -328,7 +367,19 @@ select:focus {
 /* Desktop optimizations - 98% usage */
 @media (min-width: 1024px) {
   .container,
-  section {
+  section,
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl,
+  .max-w-4xl {
+    width: 98% !important;
+    max-width: 98% !important;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+  }
+  
+  /* Desktop specific 98% utilization */
+  .max-w-\[98\%\] {
     width: 98% !important;
     max-width: 98% !important;
     padding-left: 1% !important;
@@ -456,10 +507,20 @@ select:focus {
   margin-right: calc(-50vw + 50%) !important;
 }
 
-/* 98% width utility */
+/* 98% width utility - CRITICAL */
 .width-98 {
   width: 98% !important;
   max-width: 98% !important;
   margin-left: 1% !important;
   margin-right: 1% !important;
+}
+
+/* FORCE 98% on ALL premium components */
+.max-w-\[98\%\] {
+  max-width: 98% !important;
+  width: 98% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1% !important;
+  padding-right: 1% !important;
 }
