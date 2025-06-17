@@ -1,68 +1,49 @@
 import React from 'react';
 import { Star, Quote, ExternalLink } from 'lucide-react';
-import { TestimonialsColumn } from './TestimonialsColumn';
 
 const Reviews = () => {
-  const testimonials1 = [
+  const reviews = [
     {
       name: "Anna Lindberg",
-      text: "Fantastisk service på KLIPPCENTER! Lotta är verkligen professionell och lyssnar på vad man vill ha. Har gått hit i över två år och har aldrig blivit besviken.",
-      role: "Damklippning",
-      image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150"
+      rating: 5,
+      text: "Fantastisk service på KLIPPCENTER! Lotta är verkligen professionell och lyssnar på vad man vill ha. Har gått hit i över två år och har aldrig blivit besviken. Rekommenderar starkt!",
+      service: "Damklippning",
+      date: "1 vecka sedan"
+    },
+    {
+      name: "Maria Johansson",
+      rating: 5,
+      text: "Bästa frisörsalongen i Jönköping! Caroline förstod exakt vad jag ville ha med min färgning och resultatet blev bättre än jag hade förväntat mig. Kommer definitivt tillbaka!",
+      service: "Färgning & Slingor",
+      date: "2 veckor sedan"
     },
     {
       name: "Sofia Andersson",
-      text: "Emelie är grym på blonda hår! Hon fick mitt hår att se så naturligt och vackert ut. Professionell service från början till slut.",
-      role: "Blond färgning",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150"
-    },
-    {
-      name: "Linda Karlsson",
-      text: "Annelie är fantastisk! Hon håller sig alltid uppdaterad med nya tekniker och produkter. Centralt beläget och fantastisk service.",
-      role: "Klippning & Styling",
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150"
-    }
-  ];
-
-  const testimonials2 = [
-    {
-      name: "Maria Johansson",
-      text: "Bästa frisörsalongen i Jönköping! Caroline förstod exakt vad jag ville ha med min färgning och resultatet blev bättre än förväntat.",
-      role: "Färgning & Slingor",
-      image: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150"
+      rating: 5,
+      text: "Emelie är grym på blonda hår! Hon fick mitt hår att se så naturligt och vackert ut. Professionell service från början till slut. Perfekt läge på Barnarpsgatan!",
+      service: "Blond färgning",
+      date: "1 månad sedan"
     },
     {
       name: "Emma Petersson",
-      text: "Tog med min dotter för barnklippning och personalen var så tålmodig och snäll. Hon var inte rädd alls och resultatet blev perfekt!",
-      role: "Barnklippning",
-      image: "https://images.pexels.com/photos/1542085/pexels-photo-1542085.jpeg?auto=compress&cs=tinysrgb&w=150"
+      rating: 5,
+      text: "Tog med min dotter för barnklippning och personalen var så tålmodig och snäll. Hon var inte rädd alls och resultatet blev perfekt! Tack KLIPPCENTER!",
+      service: "Barnklippning",
+      date: "3 veckor sedan"
+    },
+    {
+      name: "Linda Karlsson",
+      rating: 5,
+      text: "Annelie är fantastisk! Hon håller sig alltid uppdaterad med nya tekniker och produkter. Centralt beläget och fantastisk service. Rekommenderar starkt!",
+      service: "Klippning & Styling",
+      date: "2 månader sedan"
     },
     {
       name: "Camilla Nilsson",
-      text: "Så nöjd med min nya frisyr! Personalen är kunnig och salongen har en så mysig atmosfär. Helhetskoncept med kläder och accessoarer är ett plus.",
-      role: "Damklippning",
-      image: "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=150"
-    }
-  ];
-
-  const testimonials3 = [
-    {
-      name: "Jessica Holm",
-      text: "Amanda på Skin & Care är otrolig! Hennes hudvårdsbehandlingar har verkligen förbättrat min hy. Professionell och omtänksam.",
-      role: "Hudvård",
-      image: "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=150"
-    },
-    {
-      name: "Petra Svensson",
-      text: "Har varit kund i över 5 år och kommer alltid tillbaka. Kvaliteten är alltid på topp och atmosfären är så avslappnande.",
-      role: "Stammis",
-      image: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=150"
-    },
-    {
-      name: "Helena Eriksson",
-      text: "Perfekt för speciella tillfällen! Fick en fantastisk uppsättning till mitt bröllop. Hela teamet var så hjälpsamma och professionella.",
-      role: "Bröllopsuppsättning",
-      image: "https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=150"
+      rating: 5,
+      text: "Så nöjd med min nya frisyr! Personalen är kunnig och salongen har en så mysig atmosfär. Helhetskoncept med kläder och accessoarer är ett plus. Rekommenderar alla i Jönköping!",
+      service: "Damklippning",
+      date: "1 månad sedan"
     }
   ];
 
@@ -86,7 +67,7 @@ const Reviews = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-white pb-16 md:pb-20 lg:pb-16 overflow-hidden">
+    <section className="py-12 md:py-16 lg:py-20 bg-white pb-16 md:pb-20 lg:pb-16">
       <div className="container mx-auto px-3 md:px-4 max-w-7xl">
         <div className="text-center mb-8 md:mb-12 lg:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-dark mb-3 md:mb-4 lg:mb-6">
@@ -132,29 +113,32 @@ const Reviews = () => {
           </div>
         </div>
 
-        {/* Animated Testimonials Columns */}
-        <div className="relative">
-          <div className="flex gap-4 md:gap-6 lg:gap-8 justify-center items-start">
-            <TestimonialsColumn
-              testimonials={testimonials1}
-              duration={15}
-              className="hidden md:block"
-            />
-            <TestimonialsColumn
-              testimonials={testimonials2}
-              duration={12}
-              className="block"
-            />
-            <TestimonialsColumn
-              testimonials={testimonials3}
-              duration={18}
-              className="hidden lg:block"
-            />
-          </div>
-          
-          {/* Gradient overlays for smooth fade effect */}
-          <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-white to-transparent pointer-events-none z-10"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent pointer-events-none z-10"></div>
+        {/* Reviews Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+          {reviews.map((review, index) => (
+            <div key={index} className="bg-white rounded-xl md:rounded-2xl p-3 md:p-4 lg:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-soft-green">
+              <div className="flex items-center mb-3 md:mb-4">
+                <Quote className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary mr-2 md:mr-3 flex-shrink-0" />
+                <div className="flex items-center">
+                  {renderStars(review.rating)}
+                </div>
+              </div>
+              
+              <p className="text-tertiary mb-3 md:mb-4 lg:mb-6 leading-relaxed italic text-xs md:text-sm lg:text-base">
+                "{review.text}"
+              </p>
+              
+              <div className="border-t border-soft-green pt-3 md:pt-4">
+                <div className="flex justify-between items-start">
+                  <div className="min-w-0 flex-1">
+                    <h4 className="font-semibold text-dark text-xs md:text-sm lg:text-base">{review.name}</h4>
+                    <p className="text-xs md:text-sm text-primary">{review.service}</p>
+                  </div>
+                  <span className="text-xs md:text-sm text-tertiary ml-2 flex-shrink-0">{review.date}</span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Call to Action */}
